@@ -1,0 +1,147 @@
+/* ============== */
+/*   CSS Vars     */
+/* ============== */
+:root{
+  --hero-fg: #111;                 /* text color */
+  --hero-fg-muted: color-mix(in oklab, var(--hero-fg) 70%, transparent);
+  --hero-overlay: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.65) 0%,
+      rgba(255,255,255,0.40) 35%,
+      rgba(255,255,255,0.00) 60%
+  );
+  --hero-maxw: 1000px;             /* max readable width for text */
+  --hero-padding: clamp(16px, 4vw, 40px);
+  --floater-color: #5c8df6;        /* accent dots */
+  --floater-color-2: #00bfa6;      /* secondary accent dots */
+  --floater-count: 14;             /* how many floaters to create */
+  --floater-min: 8px;              /* min size */
+  --floater-max: 22px;             /* max size */
+  --floater-opacity: 0.25;
+}
+
+/* ============== */
+/*   Section      */
+/* ============== */
+.hero{
+  position: relative;
+  inset: 0;
+  width: 100vw;
+  min-height: 100svh; /* accounts for mobile UI chrome */
+  overflow: clip;     /* keep floaters inside */
+  display: grid;
+  place-items: center;
+  background: #fff;   /* fallback / letterbox tone */
+  color: var(--hero-fg);
+}
+
+/* ============== */
+/*   Background   */
+/* ============== */
+/* We use an IMG so we can guarantee aspect ratio w/ no crop (height:auto). */
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 0;
+  /* Slight scale gives us safe edges when we parallax-move without revealing gaps */
+  transform: translate3d(0,0,0) scale(1.06);
+  will-change: transform;
+}
+.hero-bg img{
+  width: 100%;
+  height: auto;       /* NO CROPPING */
+  object-fit: contain;/* preserve image, may letterbox */
+  display: block;
+  user-select: none;
+}
+
+/* Readability overlay (adjust gradient in vars) */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============== */
+/*   Floaters     */
+/* ============== */
+.hero-floaters{
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* above bg, below content */
+  pointer-events: none;
+  contain: paint layout;
+}
+.floater{
+  position: absolute;
+  width: var(--size, 12px);
+  height: var(--size, 12px);
+  border-radius: 999px;
+  opacity: var(--floater-opacity);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.7), rgba(255,255,255,0) 60%),
+    var(--dot-color, #5c8df6);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.1));
+  animation: floatY var(--dur, 14s) ease-in-out var(--delay, 0s) infinite alternate,
+             floatX calc(var(--dur, 14s) * 1.2) ease-in-out var(--delay, 0s) infinite alternate;
+}
+@keyframes floatY {
+  from { transform: translateY(var(--yStart, 0px)); }
+  to   { transform: translateY(var(--yEnd, -120px)); }
+}
+@keyframes floatX {
+  from { margin-left: var(--xStart, 0px); }
+  to   { margin-left: var(--xEnd, 80px); }
+}
+
+/* ============== */
+/*   Content      */
+/* ============== */
+.hero-content{
+  position: relative;
+  z-index: 3;
+  max-width: var(--hero-maxw);
+  margin: 0 var(--hero-padding);
+  text-align: center;
+}
+.eyebrow{
+  margin: 0 0 .75rem 0;
+  font-size: clamp(.8rem, 1.4vw, .95rem);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--hero-fg-muted);
+}
+.title{
+  margin: 0 auto;
+  font-size: clamp(1.6rem, 3.8vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* Optional CTA */
+.cta{
+  display: inline-block;
+  margin-top: clamp(14px, 2.2vw, 22px);
+  padding: .75rem 1.1rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  background: #111;
+}
+
+/* ============== */
+/*   Reduced Motion */
+/* ============== */
+@media (prefers-reduced-motion: reduce){
+  .floater{
+    animation: none;
+  }
+  .hero-bg{
+    transform: none !important;
+  }
+}

@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* BODY*/
+
+/* Home welcome section */
+#welcome {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* optional gradient */
+  overflow: hidden;
+}
+
+.welcome-content h1 {
+  font-size: 6vw; /* large, responsive */
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+/* -------------- ALL PARAGRAPH STYLING ---------------*/
+/* Unified typography for paragraphs + lists */
+:where(p, ul, ol, li) {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;  /* your "thickness" */
+  font-size: clamp(0.95, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.6;
+}
+
+/* Make bullet/number weight match text */
+:where(ul, ol) ::marker {
+  font-weight: inherit;
+  color: currentColor;
+}
+
+/* Small indent for lists + tidy spacing */
+:where(ul, ol) {
+  padding-inline-start: 1.25rem;  /* adjust indent here */
+  margin: 0 0 .75rem 0;           /* space after list */
+}
+
+/* Spacing between paragraphs and lists */
+p + p { margin-top: .75rem; }
+p + :is(ul, ol), 
+:is(ul, ol) + p { margin-top: .75rem; }
+
+/* Optional: small spacing within lists and nested lists */
+li { margin: .35em 0; }
+:where(li > ul, li > ol) { margin-top: .35em; }
+
+
+/* ---------------- HEADING STYLING ------------------ */
+h1{
+    font-weight: 400;
+    margin: 20px 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+}
+
+h2{
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5rem;
+}
+
+h3{
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+h4{
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+}
+
+h5{
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.39em;
+    font-size: 0.8rem;
+}
+
+h6{
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+#portfolio{
+    width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+
+.more-link{
+    font-style: italic;
+}
+
+a{
+    text-decoration: none;
+}
+.my-input, .my-text-area{
+    display: block;
+    width: 90%;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    resize: none;
+}
+
+/*------------------------------------------*/
+/* Portfolio Grid */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  position: relative;
+  width: 33vw;
+  height: 33vw;
+  background-size: cover !important;
+  background-position: center !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Hide the text until hover; center & bold it; keep above dimmer */
+.grid-item .grid-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;                 /* hidden by default */
+  visibility: hidden;         /* prevent accidental flashes */
+  transition: opacity .25s ease-in, visibility 0s linear .25s;
+  z-index: 2;                 /* above the dim layer */
+  pointer-events: none;
+  text-align: center;
+}
+
+/* Dimmer sits under text */
+.grid-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);   /* no dim by default */
+  transition: background .25s ease-in;
+  z-index: 1;
+}
+
+/* Hover state: show text + dim bg image only */
+.grid-item:hover .grid-label,
+.grid-item:focus-within .grid-label {
+  opacity: 1;
+  visibility: visible;         /* show immediately when hovering */
+  transition-delay: 0s;
+}
+.grid-item:hover::after,
+.grid-item:focus-within::after {
+  background: rgba(0,0,0,.4);  /* dim just the background */
+}
+
+/* Remove any old filter-based dimming that would affect text */
+.grid-item:hover { filter: none !important; }
+
+
+
+/*------------------------------------------*/
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #site-footer .footer-content p {
+    font-size: 0.9rem;
+  }
+}
+/* Make the form take up the full viewport height and center it */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* full screen height */
+    padding: 20px; /* space around on mobile */
+    background: #f5f5f5; /* light background */
+}
+
+/* Style the form container */
+.enquiry-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 1000px; /* limit to 1000px */
+}
+
+/* Labels and inputs */
+.enquiry-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button */
+.enquiry-form button {
+    background: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.enquiry-form button:hover {
+    background: #555;
+}
+
+/* Portfolio Grid */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  position: relative;
+  width: 33vw;
+  height: 33vw;
+  background-size: cover !important;
+  background-position: center !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+/* Project main hero */
+/* ---- Globals / helpers ---- */
+html, body { height: 100%; margin: 0; }
+
+/* Set how many pixels to subtract from the viewport height (e.g., header height) */
+:root { --hero-offset: 60px; } /* ← change this to whatever px you need */
+
+/* ---- Layout ---- */
+.hero {
+  position: relative;
+  width: 100vw;
+
+  /* Height: viewport minus the fixed offset */
+  height: calc(100vh - var(--hero-offset));
+  /* Mobile-safe unit override (iOS URL bar etc.) */
+}
+@supports (height: 100dvh) {
+  .hero { height: calc(100dvh - var(--hero-offset)); }
+}
+
+/* If you have a fixed/sticky header, add .has-fixed-header to <body>
+   so the hero starts below it (not hidden underneath). */
+.has-fixed-header .hero {
+  margin-top: var(--hero-offset);
+}
+
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff; /* make all text inside white by default */
+  box-sizing: border-box;
+}
+
+/* Readability overlay: left fade + bottom fade */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* bottom fade for text pinned at bottom */
+    linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 35%),
+    /* existing left-to-right fade */
+    linear-gradient(90deg,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.25) 40%,
+      rgba(0,0,0,0.0) 70%
+    );
+  pointer-events: none;
+}
+
+/* Pin the content block to the bottom-left, with a capped left offset */
+.hero__inner {
+  position: absolute;
+  z-index: 1;
+
+  /* Safer bottom spacing on tall/short screens + iOS safe area */
+  bottom: max(24px, calc(2vh + env(safe-area-inset-bottom)));
+
+  left: clamp(16px, 8vw, 1000px); /* never further left than 1000px on wide screens */
+  right: clamp(16px, 8vw, 160px); /* keep some right breathing room */
+  max-width: min(60ch, 90vw);
+  text-shadow: 0 2px 12px rgba(0,0,0,.35); /* boost legibility on busy photos */
+}
+
+/* push it higher on desktops */
+@media (min-width: 1024px) {
+  .hero__inner { bottom: clamp(120px, 18vh, 360px); }
+}
+
+/* ---- Typography ---- */
+.hero__title {
+  margin: 0 0 .2em 0;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 2.5rem, 5rem);
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.25;
+  opacity: 0.95;
+  font-size: clamp(1.1rem, 1rem, 2rem);
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* ---- Motion ---- */
+/* Slide in from the left by up to 1000px (but less on small screens) */
+:root { --slide-from: calc(min(60vw, 1000px) * -1); }
+
+.hero__title,
+.hero__subtitle {
+  opacity: 0;
+  transform: translateX(var(--slide-from));
+  will-change: transform, opacity;
+  animation: hero-slide-in 0.8s cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.hero__title { animation-delay: .10s; }
+.hero__subtitle { animation-delay: .35s; }
+
+@keyframes hero-slide-in {
+  from { transform: translateX(var(--slide-from)); opacity: 0; }
+  to   { transform: translateX(0);               opacity: 1; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__title,
+  .hero__subtitle {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+/* --- COMPONENTS --*/
+/* ===== Minimal, dependency-free styles ===== */
+.fullbleed-section {
+  width: 100%;
+  background: var(--bg, #f5f5f5);              /* set via HTML */
+  color: var(--fg, inherit);                   /* optional override via HTML */
+}
+
+.section__inner {
+  max-width: 1300px;                           /* your max content width */
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);      /* safe side padding (fixed) */
+  padding-block: var(--pad-block, 120px);       /* set via HTML (optional) */
+  box-sizing: border-box;  
+}
+
+.section__header > * { margin: 0; }
+.section__header > * + * { margin-top: .5rem; }
+.section__header { text-align: center; }
+
+.section__5050grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;              /* two even columns */
+  gap: var(--gap, 2rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+.section__2575grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;            /* 25% left column, 75% right column  */
+  gap: var(--gap, 1rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+.section__7525grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;            /* 75% left column, 25% right column  */
+  gap: var(--gap, 1rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+.section__3060grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;            /* 33% left column, 66% right column  */
+  gap: var(--gap, 1rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+.section__6030grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;            /* 66% left column, 33% right column  */
+  gap: var(--gap, 1rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+.section__100grid {
+  display: grid;
+  grid-template-columns: 1fr;            /* 100% single column  */
+  gap: var(--gap, 1rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+  
+}
+
+.section__303030grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;              /* three even columns */
+  gap: var(--gap, 2rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+
+
+.section__col > *:first-child { 
+  margin-top: 0;
+}
+
+/* ===== Breakpoints ===== */
+
+/* Stack to one column on narrow screens */
+@media (max-width: 900px) {
+  .section__5050grid, .section__2575grid, .section__7525grid, .section__3060grid, .section__6030grid, .section__303030grid { grid-template-columns: 1fr; }  /* fixed class name */
+}
+
+/* Optional: extra comfy spacing on very large screens */
+@media (min-width: 1280px) {
+  .section__inner { padding-inline: 48px; }
+  .section__5050grid, .section__2575grid, .section__7525grid, .section__3060grid, .section__6030grid, .section__303030grid {
+    gap: var(--gap, 1.25rem);   /* was: gap: 1.25rem; */
+  }
+}
+
+/* Optional: very small phones */
+@media (max-width: 380px) {
+  .section__inner { padding-inline: 12px; }
+}
+
+/*_________PARALLAX HERO _________*/
+/* Full-viewport parallax */
+.parallax-hero{
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  text-align: left;
+  position: relative;
+  overflow: clip;
+
+  /* Parallax background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Full-height colored slice controlled from HTML */
+.parallax-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg,
+      var(--panel, rgba(0,0,0,.38)) 0 var(--panel-width, 50%),
+      transparent var(--panel-width, 50%));
+  pointer-events:none;
+  z-index:0;
+}
+
+
+.parallax-inner{
+  position: relative;
+  z-index: 1;                 /* above the overlay */
+  width: var(--panel-width, 50%);
+  padding: clamp(24px, 6vw, 80px);
+  max-width: none;
+  background: transparent;    /* was var(--panel, ...) — make it transparent */
+  color: var(--panel-fg, #fff);
+  /* border-radius: 16px;  <- optional; remove if you want a hard edge */
+
+
+  /* NEW: align the left edge to the 1000px frame’s left edge */
+  margin-left: max(
+    clamp(16px, 4vw, 32px),           /* safe padding on small screens */
+    calc((100vw - 1300px) / 2)        /* left gutter of a centered 1000px frame */
+  );
+  box-sizing: border-box;
+}
+@media (max-width: 1300px){
+  .parallax-inner{ margin-left: clamp(16px, 4vw, 32px); } /* no negative gutter */
+}
+
+
+.parallax-inner > *{ margin: 0 0 .75rem; }
+.parallax-inner > *:last-child{ margin-bottom: 0; }
+
+/* Mobile fallback */
+@media (max-width: 900px){
+  .parallax-hero{ background-attachment: scroll; }
+  .parallax-inner{
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+.project-teaser{
+  --accent: #8669E6;
+  --gap: .75rem;
+
+  display: flex;
+  flex-direction: column;      /* top → bottom stack */
+  align-items: flex-start;
+  gap: var(--gap);
+  color: #111;
+  max-width: 40ch;
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Vertical label */
+.vtext{
+  writing-mode: vertical-rl;   /* vertical text */
+  text-orientation: upright;   /* keep letters upright */
+  letter-spacing: .2em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent);
+  /* If you want it rotated instead of upright vertical, add class "rotate" */
+}
+.vtext.rotate{                 /* optional: rotate 90° instead */
+  writing-mode: initial;
+  text-orientation: initial;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  white-space: nowrap;
+}
+
+/* Extra space */
+.spacer{ height: 4rem; }
+
+/* Icon */
+.icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+/* Title + copy */
+.title{
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.desc{
+  margin: 0;
+  color: #444;
+  font-size: .95rem;
+}
+
+/* Underlined link with right arrow */
+.cta{
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.cta .arrow{ flex: 0 0 auto; }
+.cta:hover{ text-decoration-thickness: 2px; }
+
+.subheading-03.homepage{
+  display: inline-block;            /* needed so transform only affects this box */
+  font-family: Raleway, sans-serif;
+  color: #fff;
+  letter-spacing: 3.5px;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 9px;
+  white-space: nowrap;              /* keep on one line */
+
+
+  /* rotate to read vertically down the page */
+  transform: rotate(-90deg);        /* same as 270deg */
+  transform-origin: 0 0;            /* pivot from top-left */
+}
+
+
+/* ---HOME HERO ---*/
+/* ===== Full-screen hero ===== */
+.home-hero{
+  --bg: #EAE6DD;
+  --ink: #0a0a0a;
+
+  min-height: 100svh;                   /* full screen (mobile-safe) */
+  background: var(--bg);
+  color: var(--ink);
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Centered container with comfy, safe padding */
+.hero-inner{
+  width: 100%;
+  padding-inline: max(clamp(16px, 5vw, 48px), env(safe-area-inset-left));
+  padding-block: clamp(32px, 8vh, 96px);
+  display: grid;
+  place-items: center;
+}
+
+/* The SVG graphic: scales but never gets too small or too huge */
+.hero-graphic{
+  margin: 0;
+  width: clamp(280px, 70vw, 1100px);    /* main scaler */
+  max-height: 70svh;                    /* avoid touching top/bottom on short screens */
+  display: grid;
+  place-items: center;
+}
+.hero-graphic img{
+  width: 100%;
+  height: auto;                         /* keep SVG aspect ratio */
+  display: block;
+}
+
+/* Optional bottom-left list pinned to the true corner */
+.hero-list{
+  position: absolute;
+  left: max(12px, env(safe-area-inset-left));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 300;
+  letter-spacing: .02em;
+  font-size: clamp(.60rem, 1.2vw, 1rem);
+  line-height: 1.5;
+}
+.hero-list li{ margin: .25rem 0; }
+
+/* Tweak on very narrow screens */
+@media (max-width: 560px){
+  .hero-graphic{ width: clamp(240px, 86vw, 1100px); max-height: 62svh; }
+}
+
+
+/* ---- UX Laws component (scoped) ---- */
+  .ux-laws {
+    --ux-gap: 1rem;
+    --ux-gap-lg: 1.25rem;
+    --ux-maxw: 1100px;
+    --ux-text: inherit;
+    --ux-muted: color-mix(in oklab, currentColor 70%, transparent);
+  }
+
+  .ux-laws__sr-only {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  .ux-laws__grid {
+    list-style: none; margin: 0 auto; padding: 0;
+    max-width: var(--ux-maxw);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ux-gap-lg) var(--ux-gap);
+  }
+
+  @media (max-width: 720px) {
+    .ux-laws__grid { grid-template-columns: 1fr; }
+  }
+
+  .ux-laws__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .ux-laws__icon {
+    flex: 0 0 auto;
+    width: 36px; height: 36px;
+    border-radius: 6px;
+  }
+
+  .ux-laws__text {
+    color: var(--ux-text);
+    line-height: 1.5;
+    flex: 1 1 auto;
+  }
+
+  .ux-laws__text strong { font-weight: 600; }
+
+  .ux-laws__sublist {
+    margin: .25rem 0 0 1.1rem;
+    padding: 0;
+  }
+  .ux-laws__sublist li + li { margin-top: .25rem; }
+  .ux-laws__sublist li { color: var(--ux-text); }
+  .ux-laws__sublist li strong { color: var(--ux-muted); font-weight: 600; }
+
+
+  /* FEATURED PRODUCT IMAGES */
+/* Grid: [gutter][600][600][gutter] => content max 1200px */
+.section__productfeature{
+  display:grid;
+  grid-template-columns: 1fr minmax(0,600px) minmax(0,600px) 1fr;
+  grid-template-rows: auto auto auto; /* top content | image | bottom content */
+  gap: clamp(12px, 2.5vw, 24px);
+  width:100%;
+  margin:0 auto;
+  padding: clamp(12px, 3vw, 28px) 0;
+  color: var(--pf-fg,#333);
+}
+
+/* Image stays inside the same 1200px center band as the text */
+.section__productfeature .pf-image{
+  grid-column: 2 / 4; /* columns 2+3 only (max 1200px) */
+  grid-row: 2;
+  margin:0;
+}
+.section__productfeature .pf-image img{
+  display:block;
+  width:100%;   /* fill the 1200px band */
+  height:auto;  /* preserve aspect ratio; no cropping */
+}
+
+/* Single content card (never overlaps the image because it's on a different row) */
+.section__productfeature .pf-card{
+  grid-column: 2;                    /* defaults; overridden by data-x */
+  grid-row: 1;                       /* defaults; overridden by data-y */
+  align-self:center;
+  justify-self:start;
+  max-width:100%;
+  padding: clamp(12px,2.5vw,20px);
+  border-radius:16px;
+  background: transparent;
+}
+
+/* Place the card using the SAME API as your sample */
+.section__productfeature[data-y="top"]    .pf-card{ grid-row: 1; }
+.section__productfeature[data-y="bottom"] .pf-card{ grid-row: 3; }
+
+.section__productfeature[data-x="left"]  .pf-card{ grid-column: 2; justify-self:start; text-align:left; }
+.section__productfeature[data-x="right"] .pf-card{ grid-column: 3; justify-self:end;   text-align:right; }
+
+/* Type */
+.pf-kicker{ margin:0 0 .25em; font-size: clamp(.9rem,1.6vw,1rem); color:#4A90E2; }
+.pf-title{  margin:.1em 0 .35em; font-size: clamp(1.25rem,2.5vw,2rem); line-height:1.15; }
+.pf-text{   margin:0; font-size: clamp(.95rem,1.6vw,1.125rem); line-height:1.45; }
+
+/* Mobile: single column; image still sits between top/bottom content without overlap */
+@media (max-width: 768px){
+  .section__productfeature{
+    grid-template-columns: 1fr minmax(0, min(100%, 1200px)) 1fr;
+    grid-template-rows: auto auto auto;
+    gap: clamp(10px,3vw,18px);
+  }
+  .section__productfeature .pf-card{ grid-column: 2; text-align:left; }
+  .section__productfeature .pf-image{ grid-column: 2; } /* image also capped to center column */
+}
