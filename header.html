@@ -1,6 +1,6 @@
 
    
-    <!-- ===== SEGMENT 1: HEADER ===== -->
+    <!-- ===== SEGMENT 1: HEADER (fixed dropdown + mobile hamburger) ===== -->
 <header class="navbar" role="banner">
   <div class="navbar-row">
     <a href="/" class="brand" aria-label="home">
@@ -11,7 +11,7 @@
     <!-- Desktop nav -->
     <nav class="nav" aria-label="primary">
       <div class="dropdown">
-        <button class="dropdown-toggle" type="button">Product Design</button>
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">Product Design</button>
         <div class="dropdown-list" role="menu" aria-label="Product Design">
           <a href="./trips.html">Trips</a>
           <a href="./yachtListings.html">YachtListing</a>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="dropdown-toggle" type="button">Branding</button>
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">Branding</button>
         <div class="dropdown-list" role="menu" aria-label="Branding">
           <a href="./fortifiedoceanic.html">Fortified Oceanic</a>
           <a href="./annascurtains.html">Annas Curtains</a>
@@ -38,7 +38,7 @@
 
     <!-- Mobile hamburger -->
     <button class="menu-button" id="menuButton" aria-label="menu" aria-controls="drawer" aria-expanded="false">
-      <span class="w-icon-nav-menu"></span>
+      <span class="w-icon-nav-menu" aria-hidden="true"></span>
     </button>
   </div>
 
@@ -60,15 +60,15 @@
 </header>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Inter:wght@400;600&display=swap');
 
   :root{
-    --maxw-h: 1150px;
+    --maxw-h: 1150px;                          /* header content frame */
     --pad-h: clamp(16px, 4vw, 32px);
     --line-h: #e6e6e6;
     --shadow-h: 0 8px 20px rgba(0,0,0,.04), 0 1px 3px rgba(0,0,0,.06);
-    
   }
+
   .navbar{
     position: sticky; top: 0; z-index: 1000;
     background:#fff; box-shadow: var(--shadow-h);
@@ -79,40 +79,63 @@
     margin-inline: auto;
     padding: 14px var(--pad-h);
     display:flex; align-items:center; justify-content:space-between; gap:16px;
-    font-family: Raleway, Inter, sans-serif;
+    min-width: 0;                             /* prevent overflow pushing button off */
   }
-  .brand{ display:inline-flex; align-items:center; gap:10px; color:#000; text-decoration:none; }
-  .brand img{ height:36px; width:auto; display:block; }
-  .header-logo{ margin:0; font: 700 20px/1 Raleway, Inter, system-ui, sans-serif; color:#000; letter-spacing:.02em; }
 
-  .nav{ display:flex; align-items:center; gap:28px; }
+  /* Brand (let it shrink if needed so hamburger stays visible) */
+  .brand{
+    display:inline-flex; align-items:center; gap:10px; color:#000; text-decoration:none;
+    min-width: 0; flex: 1 1 auto;
+  }
+  .brand img{ height:36px; width:auto; display:block; flex:0 0 auto; }
+  .header-logo{
+    margin:0; font: 700 clamp(18px, 2vw, 20px)/1 Raleway, Inter, system-ui, sans-serif; color:#000; letter-spacing:.02em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .nav{ display:flex; align-items:center; gap:28px; flex: 0 1 auto; }
   .nav > a{ color:#000; font:600 14px/1 Raleway, Inter, sans-serif; text-decoration:none; }
 
-  .dropdown{ position:relative; 
-  font-family: Raleway, Inter, sans-serif;}
+  /* Dropdowns */
+  .dropdown{
+    position:relative;
+    padding-bottom: 10px;                     /* keeps hover alive while moving to the list */
+  }
   .dropdown-toggle{
     display:inline-flex; align-items:center; gap:.5rem;
-    color:#000; font:600 14px/1 Raleway, Inter, sans-serif; cursor:pointer; background:none; border:0;
+    color:#000; font:600 14px/1 Raleway, Inter, sans-serif;
+    cursor:pointer; background:none; border:0;
   }
   .dropdown-toggle::after{
     content:""; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid #000; transform: translateY(1px);
   }
+
   .dropdown-list{
-    position:absolute; top:calc(100% + 10px); left:0;
+    position:absolute; top:100%;              /* sit flush with the toggle */
+    margin-top: 10px;                         /* spacing without breaking hover region */
+    left:0; z-index: 2000;
     min-width:240px; background:#fff; border:1px solid var(--line-h);
     box-shadow: var(--shadow-h); border-radius:6px; padding:6px; display:none;
   }
   .dropdown-list a{ display:block; padding:10px 12px; color:#000; border-radius:4px; white-space:nowrap; }
   .dropdown-list a:hover{ background:#f7f8f9; text-decoration:none; }
 
+  /* Open states: hover for pointer devices, and .open class (JS) for click */
   @media (hover:hover){ .dropdown:hover .dropdown-list{ display:block; } }
+  .dropdown.open .dropdown-list{ display:block; }
+  .dropdown.open .dropdown-toggle{ outline: 2px solid transparent; } /* keep focus ring minimal */
 
-  /* Mobile menu */
-  .menu-button{ display:none; width:40px; height:40px; border:0; background:transparent; cursor:pointer; position:relative; }
+  /* Mobile menu button (ensure it stays inside frame and above all) */
+  .menu-button{
+    display:none; width:40px; height:40px; border:0; background:transparent; cursor:pointer;
+    position: relative; z-index: 1101;        /* above overlay/drawer */
+    flex: 0 0 auto;                           /* never shrink */
+  }
   .menu-button .w-icon-nav-menu,
   .menu-button::before,
   .menu-button::after{
-    content:""; position:absolute; left:8px; right:8px; height:2px; background:#000; transition: transform .25s ease, opacity .25s ease;
+    content:""; position:absolute; left:8px; right:8px; height:2px; background:#000;
+    transition: transform .25s ease, opacity .25s ease;
   }
   .menu-button::before{ top:12px; }
   .menu-button .w-icon-nav-menu{ top:19px; }
@@ -121,24 +144,97 @@
   .menu-button[aria-expanded="true"] .w-icon-nav-menu{ opacity:0; }
   .menu-button[aria-expanded="true"]::after{ transform: translateY(-7px) rotate(-45deg); }
 
+  /* Overlay + drawer */
   .w-nav-overlay{
     position: fixed; inset:0; background: rgba(0,0,0,.35);
-    opacity:0; pointer-events:none; transition: opacity .2s ease; z-index: 999;
+    opacity:0; pointer-events:none; transition: opacity .2s ease; z-index: 1099;
   }
   .w-nav-overlay.open{ opacity:1; pointer-events:auto; }
 
   .nav-drawer{
     position: fixed; top:0; right:0; height:100dvh; width:88vw; max-width:360px;
     background:#fff; box-shadow: -8px 0 20px rgba(0,0,0,.08);
-    transform: translateX(100%); transition: transform .25s ease; z-index:1000;
+    transform: translateX(100%); transition: transform .25s ease; z-index:1100;
     padding:24px; display:flex; flex-direction:column; gap:10px;
   }
   .nav-drawer.open{ transform: translateX(0); }
   .nav-drawer a{ color:#000; font:600 16px/1.2 Raleway, Inter, sans-serif; padding:10px 6px; }
   .drawer-sep{ border:none; border-top:1px solid var(--line-h); margin:.5rem 0; }
 
+  /* Responsive: collapse nav to hamburger ≤ 992px */
   @media (max-width: 992px){
     .nav{ display:none; }
-    .menu-button{ display:inline-block; }
+    .menu-button{ display:inline-block; margin-left: auto; } /* auto-push to right within the 1150 frame */
   }
 </style>
+
+<script>
+(function(){
+  // ===== Dropdowns: click to open, click outside to close (hover still works via CSS)
+  const dropdowns = document.querySelectorAll('.dropdown');
+  function closeAll(){ dropdowns.forEach(d => { d.classList.remove('open'); const t=d.querySelector('.dropdown-toggle'); t && t.setAttribute('aria-expanded','false'); }); }
+
+  dropdowns.forEach(d => {
+    const toggle = d.querySelector('.dropdown-toggle');
+    const list   = d.querySelector('.dropdown-list');
+    if (!toggle || !list) return;
+
+    // Click toggles
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const willOpen = !d.classList.contains('open');
+      closeAll();
+      if (willOpen){ d.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+    });
+
+    // Keep open while interacting inside the list
+    d.addEventListener('mouseenter', () => { /* CSS handles hover */ });
+    d.addEventListener('mouseleave', () => {
+      // Only close if user isn't interacting with it via click
+      if (window.matchMedia('(hover:hover)').matches){
+        d.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    const inDropdown = e.target.closest('.dropdown');
+    if (!inDropdown) closeAll();
+  });
+  // Escape to close current
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  // ===== Mobile drawer
+  const btn = document.getElementById('menuButton');
+  const overlay = document.getElementById('navOverlay');
+  const drawer = document.getElementById('drawer');
+
+  function openNav(){
+    btn?.setAttribute('aria-expanded','true');
+    overlay.hidden = false;
+    overlay.classList.add('open');
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav(){
+    btn?.setAttribute('aria-expanded','false');
+    overlay.classList.remove('open');
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    setTimeout(()=>{ overlay.hidden = true; }, 200);
+  }
+
+  btn?.addEventListener('click', (e)=>{
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    expanded ? closeNav() : openNav();
+  });
+  overlay?.addEventListener('click', closeNav);
+
+})();
+</script>
