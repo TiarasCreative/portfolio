@@ -1,0 +1,127 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Tiara's Designs</title>
+  <meta name="description" content="Tiara is a world renouned designer. Let her do your branding, marketing and logos">
+  <meta name="keywords" content="Sydney, Branding, logos, design, product design">
+  <meta name="author" content="Tiara Design">
+  <!-- Fix meta name + width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Correct path to CSS folder -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/hero.css" />
+</head>
+<body>
+
+  <!-- Inject Header here -->
+  <div id="header"></div>
+
+  <main>
+
+
+<!-- ===== SEGMENT 2: ABOUT ===== -->
+<section class="section-about">
+  <div class="container-about">
+    <div class="left-rail">
+      <div class="connect-col">
+        <div class="subheading-connect">CONNECT</div>
+        <div class="connect-line"></div>
+        <a class="link-block" href="https://www.linkedin.com/in/tiara-dobbs/" target="_blank" aria-label="LinkedIn">
+          <img class="icon-connect" src="https://cdn.prod.website-files.com/61599a9f0be5d36428539122/6180f564426f071ee79f88ac_Portfolio_Icon%20LinkedIn.png" alt="LinkedIn" />
+        </a>
+        <a class="link-block" href="https://medium.com/@tiarascreative" target="_blank" aria-label="Medium">
+          <img class="icon-connect" src="https://cdn.prod.website-files.com/61599a9f0be5d36428539122/6180f5644f39b97677626d58_Portfolio_Icon%20Instagram.png" alt="Instagram" />
+        </a>
+        <a class="link-block" href="mailto:tiara.dobbs@outlook.com" aria-label="Email">
+          <img class="icon-connect" src="https://cdn.prod.website-files.com/61599a9f0be5d36428539122/6180f5641ee3e9e01e61c641_Portfolio_Icon%20Email.png" alt="Email" />
+        </a>
+        <a class="link-block" href="./media/TiaraDobbs-resume.pdf" target="_blank" aria-label="Resume">
+          <img class="icon-connect" src="https://cdn.prod.website-files.com/61599a9f0be5d36428539122/6180f5642f72a34567d65ff4_Portfolio_Icon%20Resume.png" alt="Resume" />
+        </a>
+      </div>
+
+      <div class="portrait-wrap">
+        <img
+          class="portrait"
+          src="https://cdn.prod.website-files.com/61599a9f0be5d36428539122/618278a2056081d21e3c9a5b_Karen%20Portrait%20(Crop).jpg"
+          srcset="
+            https://cdn.prod.website-files.com/61599a9f0be5d36428539122/618278a2056081d21e3c9a5b_Karen%20Portrait%20(Crop)-p-500.jpeg 500w,
+            https://cdn.prod.website-files.com/61599a9f0be5d36428539122/618278a2056081d21e3c9a5b_Karen%20Portrait%20(Crop).jpg 661w"
+          sizes="(max-width: 767px) 65vw, (max-width: 991px) 60vw, (max-width: 1919px) 35vw, 460px"
+          alt="Tiara Dobbs" />
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <h1>Hey, I'm Tiara.</h1>
+      <div class="rich">
+        <p>Living, playing and creating in <strong>Sydney, Australia</strong>. I grew up in Australia, studied abroad in Hong Kong and America, but I still call Australia home (Cue sound track 'I've been to cities..').<br>‍</p>
+        <p>I’m a <strong>Senior Product Designer</strong> with <strong>8 years</strong>’ experience, specialising in from scratch product design, branding and design systems. My approach to design is clean, organic and playful. I aim to spark joy and better the world by thinking outside the box. Curiosity is my driving force. Design is what I love to do.<br>‍</p>
+        <p>I’m happiest when helping others succeed — building scalable patterns, educating designers, and connecting people together. I am ADPlist Mentor <br>‍</p>
+        <p>‍<strong>‍</strong>I seek discomfort in order to grow and live a richly experiential life. Some fun stories:</p>
+        <ul class="text-list no-padding" role="list">
+          <li>I was an architect for Australia’s most expensive residence</li>
+          <li>I’ve performed at the Sydney Town Hall</li>
+          <li>I’ve travelled to 32 countries and 115 cities</li>
+          <li>I topped the state for final year Physics</li>
+          <li>I hiked up a volcano while it erupted and lived to tell the tale</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root{
+    --maxw-a: 1320px;
+    --pad-a: clamp(16px, 4vw, 32px);
+    --text-a: #172b4d;
+    --muted-a: #444;
+    --shadow-a: 0 8px 20px rgba(0,0,0,.04), 0 1px 3px rgba(0,0,0,.06);
+  }
+  .section-about{ padding-block: clamp(32px, 6vw, 64px); }
+  .container-about{
+    width:min(100%, var(--maxw-a));
+    margin-inline:auto; padding-inline: var(--pad-a);
+    display:grid; gap: clamp(24px, 4vw, 40px);
+    grid-template-columns: 1fr 1.4fr; align-items:start;
+  }
+  @media (max-width: 991px){ .container-about{ grid-template-columns:1fr; } }
+
+  .left-rail{
+    position: relative;
+    display:grid; grid-template-columns: auto 1fr; align-items:start; gap: 14px 16px;
+  }
+  .connect-col{ display:flex; flex-direction:column; align-items:center; gap:10px; padding-top:4px; }
+  .subheading-connect{
+    writing-mode: vertical-rl; text-orientation: mixed;
+    font: 700 10px/1 Raleway, Inter, sans-serif; letter-spacing:.28em; color:#000;
+  }
+  .connect-line{ width:2px; height:60px; background:#000; opacity:.8; }
+  .icon-connect{ width:22px; height:22px; }
+
+  .portrait-wrap{ grid-column: 1 / -1; }
+  .portrait{ width:460px; height:auto; box-shadow: var(--shadow-a); }
+  @media (max-width: 991px){ .portrait{ width:65vw; max-width:460px; } }
+
+  .about-copy h1{
+    margin:0 0 12px;
+    font: 700 clamp(28px, 5vw, 40px)/1.1 Raleway, "DM Serif Display", Inter, sans-serif;
+    color: var(--text-a);
+  }
+  .rich{ color: var(--muted-a); font-size:1rem; line-height:1.7; max-width:60ch; }
+  .rich p{ margin:0 0 1rem; }
+  .rich ul{ margin:.25rem 0 0 1.2rem; padding:0; }
+  .text-list.no-padding{ margin-left:1.2rem; }
+  .text-list li{ margin:.25rem 0; }
+</style>
+
+</main>
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Correct path to JS folder -->
+  <script src="./js/include.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/hero.js" defer></script>
+</body>
+

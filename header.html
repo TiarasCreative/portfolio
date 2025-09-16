@@ -1,150 +1,144 @@
 
    
-    <!-- header.html (fixed, aligned to 1600px, shrink-on-scroll) -->
-<header class="header" id="site-header">
-  <style>
-     @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-    :root{
-      --frame-max: 1300px;                  /* match your page frame */
-      --content-pad: clamp(24px, 6vw, 80px);/* match parallax left padding */
-      --drawer-width: 280px;
-    }
-
-    *{ box-sizing:border-box; margin:0; padding:0; }
-    body{ font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-
-    /* === Fixed header (always at screen top) === */
-    .header{
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 1100;
-      background: #fff;
-      width: 100%;
-      box-shadow: 0 8px 20px rgba(0,0,0,.04), 0 1px 3px rgba(0,0,0,.06);
-      transition: box-shadow .25s ease;
-    }
-
-    /* Row aligns with the same left “text edge” as your parallax content */
-    .header-inner{
-      width: 100%;
-      padding-left: calc((100vw - min(100vw, var(--frame-max))) / 2 + var(--content-pad));
-      padding-right: calc((100vw - min(100vw, var(--frame-max))) / 2 + 16px);
-      padding-top: 18px; padding-bottom: 18px;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      transition: padding .25s ease;
-    }
-
-    /* Shrink state applied on scroll */
-    .header.shrink .header-inner{
-      padding-top: 10px; padding-bottom: 10px;
-    }
-
-    /* Brand (logo + name) */
-    .brand{ display:inline-flex; align-items:center; gap:10px; min-width:0; text-decoration:none; color:#000; }
-    .brand-name{ font-weight:600; letter-spacing:.02em; white-space:nowrap; color:#000; }
-
-    /* Logo scales down slightly when scrolled */
-    .logo-img{ height: 44px; width:auto; display:block; transition: transform .25s ease, height .25s ease; }
-    .header.shrink .logo-img{ transform: scale(.9); }
-
-    /* Hamburger kept fixed (so drawer/backdrop layering stays perfect) and inside 1600px frame */
-    .hamburger{
-      display:inline-flex; flex-direction:column; justify-content:center; gap:5px;
-      width:40px; height:40px; border:0; background:transparent; cursor:pointer;
-
-      position: fixed;
-      top: 20px; /* adjusted with shrink below */
-      right: max(16px, calc((100vw - min(100vw, var(--hamburger-frame, 1200px))) / 2 + 16px));
-      z-index: 9999;
-    }
-    .header.shrink .hamburger{ top: 12px; }
-
-    .hamburger .bar{ width:24px; height:2px; background:#000; transition: transform .3s ease, opacity .3s ease; }
-    .hamburger[aria-expanded="true"] .bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-    .hamburger[aria-expanded="true"] .bar:nth-child(2){ opacity: 0; }
-    .hamburger[aria-expanded="true"] .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-
-    /* Drawer + Backdrop (unchanged) */
-    .drawer{
-      position: fixed; top:0; right:0; height:100dvh; width:var(--drawer-width);
-      background:#fff; transform: translateX(100%); transition: transform .3s ease;
-      padding-top: 4rem; z-index: 1050; display:flex; flex-direction:column;
-    }
-    .drawer.open{ transform: translateX(0); }
-    .drawer a{ color:#000; text-decoration:none; padding:1rem 1.25rem; border-bottom:1px solid #ddd; }
-    .drawer a:hover{ background:#f0f0f0; }
-
-    .backdrop{
-      position: fixed; inset:0; background: rgba(0,0,0,.4);
-      opacity:0; pointer-events:none; transition:opacity .3s ease; z-index:1040;
-    }
-    .backdrop.open{ opacity:1; pointer-events:auto; }
-
-    /* Mobile gutters / safe area */
-    @media (max-width: 900px){
-      .header-inner{
-        padding-left: clamp(16px, 4vw, 24px);
-        padding-right: clamp(16px, 4vw, 24px);
-        padding-top: max(16px, calc(env(safe-area-inset-top, 0px) + 8px));
-        padding-bottom: 16px;
-      }
-      .hamburger{ top: max(18px, calc(env(safe-area-inset-top, 0px) + 10px)); }
-      .header.shrink .hamburger{ top: max(12px, calc(env(safe-area-inset-top, 0px) + 6px)); }
-    }
-
-    /* Spacer to offset the fixed header height (set via JS) */
-    .header-spacer{ width:100%; height: var(--header-h, 72px); }
-  </style>
-
-  <div class="header-inner">
-    <a href="index.html" class="brand" aria-label="Home">
-      <!-- Replace the src with your logo path -->
-      <img class="logo-img" src="./media/TiaraDobbs-Logo.png" alt="Tiara Dobbs logo">
-      <span class="brand-name">Tiara Dobbs</span>
+    <!-- ===== SEGMENT 1: HEADER ===== -->
+<header class="navbar" role="banner">
+  <div class="navbar-row">
+    <a href="/" class="brand" aria-label="home">
+      <img src="./media/TiaraDobbs-Logo.png" alt="KL logo" />
+      <h1 class="header-logo">Tiara Dobbs</h1>
     </a>
 
-    <!-- Hamburger (functionality unchanged) -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    <!-- Desktop nav -->
+    <nav class="nav" aria-label="primary">
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button">Product Design</button>
+        <div class="dropdown-list" role="menu" aria-label="Product Design">
+          <a href="./trips.html">Trips</a>
+          <a href="./yachtListings.html">YachtListing</a>
+          <a href="./where-in.space.html">Where-in.space</a>
+          <a href="./rightful.html">Rightful</a>
+          <a href="./tetrabin.html">Tetrabin</a>
+          <a href="./warmvox.html">Warmvox</a>
+          <a href="./qekout.html">Qekout</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button">Branding</button>
+        <div class="dropdown-list" role="menu" aria-label="Branding">
+          <a href="./fortifiedoceanic.html">Fortified Oceanic</a>
+          <a href="./annascurtains.html">Annas Curtains</a>
+          <a href="./ankorbranding.html">Ankor Software</a>
+          <a href="./warmvox.html">WarmVox</a>
+        </div>
+      </div>
+
+      <a href="./about.html" aria-current="page">About</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button class="menu-button" id="menuButton" aria-label="menu" aria-controls="drawer" aria-expanded="false">
+      <span class="w-icon-nav-menu"></span>
     </button>
   </div>
+
+  <!-- Mobile overlay + drawer -->
+  <div class="w-nav-overlay" id="navOverlay" hidden></div>
+  <aside class="nav-drawer" id="drawer" aria-hidden="true">
+    <a href="/design-system">Atlassian Design System</a>
+    <a href="/jira">Jira Accessibility</a>
+    <a href="/gumtree">Gumtree</a>
+    <a href="/balance">Balance</a>
+    <a href="/habitat">Habitat</a>
+    <a href="/fishbowl">Fishbowl</a>
+    <hr class="drawer-sep" />
+    <a href="/one-sydney-harbour">One Sydney Harbour</a>
+    <a href="/studio">Studio</a>
+    <hr class="drawer-sep" />
+    <a href="/about" aria-current="page">About</a>
+  </aside>
 </header>
 
-<!-- Spacer directly after the fixed header -->
-<div class="header-spacer" id="header-spacer"></div>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-<!-- Drawer + Backdrop (unchanged markup) -->
-<nav class="drawer" id="drawer">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="./media/TiaraDobbs-resume.pdf">Resume</a>
-  <a href="projects.html">Projects</a>
-  <a href="enquiry.html">Enquiry</a>
-</nav>
-<div class="backdrop" id="backdrop"></div>
-
-
-<script>
-(function(){
-  const header = document.getElementById('site-header');
-  const spacer = document.getElementById('header-spacer');
-
-  function syncHeaderState(){
-    const scrolled = (window.scrollY || document.documentElement.scrollTop) > 1;
-    header.classList.toggle('shrink', scrolled);
-    // Keep the spacer exactly the current header height (after shrink)
-    const h = header.getBoundingClientRect().height;
-    spacer.style.height = h + 'px';
-    document.documentElement.style.setProperty('--header-h', h + 'px');
+  :root{
+    --maxw-h: 1150px;
+    --pad-h: clamp(16px, 4vw, 32px);
+    --line-h: #e6e6e6;
+    --shadow-h: 0 8px 20px rgba(0,0,0,.04), 0 1px 3px rgba(0,0,0,.06);
+    
   }
+  .navbar{
+    position: sticky; top: 0; z-index: 1000;
+    background:#fff; box-shadow: var(--shadow-h);
+    font-family: Raleway, Inter, sans-serif;
+  }
+  .navbar-row{
+    width: min(100%, var(--maxw-h));
+    margin-inline: auto;
+    padding: 14px var(--pad-h);
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family: Raleway, Inter, sans-serif;
+  }
+  .brand{ display:inline-flex; align-items:center; gap:10px; color:#000; text-decoration:none; }
+  .brand img{ height:36px; width:auto; display:block; }
+  .header-logo{ margin:0; font: 700 20px/1 Raleway, Inter, system-ui, sans-serif; color:#000; letter-spacing:.02em; }
 
-  // Run once and on changes
-  window.addEventListener('load', syncHeaderState);
-  window.addEventListener('resize', syncHeaderState);
-  window.addEventListener('orientationchange', syncHeaderState);
-  window.addEventListener('scroll', syncHeaderState, { passive:true });
+  .nav{ display:flex; align-items:center; gap:28px; }
+  .nav > a{ color:#000; font:600 14px/1 Raleway, Inter, sans-serif; text-decoration:none; }
 
-  syncHeaderState();
-})();
-</script>
+  .dropdown{ position:relative; 
+  font-family: Raleway, Inter, sans-serif;}
+  .dropdown-toggle{
+    display:inline-flex; align-items:center; gap:.5rem;
+    color:#000; font:600 14px/1 Raleway, Inter, sans-serif; cursor:pointer; background:none; border:0;
+  }
+  .dropdown-toggle::after{
+    content:""; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid #000; transform: translateY(1px);
+  }
+  .dropdown-list{
+    position:absolute; top:calc(100% + 10px); left:0;
+    min-width:240px; background:#fff; border:1px solid var(--line-h);
+    box-shadow: var(--shadow-h); border-radius:6px; padding:6px; display:none;
+  }
+  .dropdown-list a{ display:block; padding:10px 12px; color:#000; border-radius:4px; white-space:nowrap; }
+  .dropdown-list a:hover{ background:#f7f8f9; text-decoration:none; }
 
+  @media (hover:hover){ .dropdown:hover .dropdown-list{ display:block; } }
+
+  /* Mobile menu */
+  .menu-button{ display:none; width:40px; height:40px; border:0; background:transparent; cursor:pointer; position:relative; }
+  .menu-button .w-icon-nav-menu,
+  .menu-button::before,
+  .menu-button::after{
+    content:""; position:absolute; left:8px; right:8px; height:2px; background:#000; transition: transform .25s ease, opacity .25s ease;
+  }
+  .menu-button::before{ top:12px; }
+  .menu-button .w-icon-nav-menu{ top:19px; }
+  .menu-button::after{ top:26px; }
+  .menu-button[aria-expanded="true"]::before{ transform: translateY(7px) rotate(45deg); }
+  .menu-button[aria-expanded="true"] .w-icon-nav-menu{ opacity:0; }
+  .menu-button[aria-expanded="true"]::after{ transform: translateY(-7px) rotate(-45deg); }
+
+  .w-nav-overlay{
+    position: fixed; inset:0; background: rgba(0,0,0,.35);
+    opacity:0; pointer-events:none; transition: opacity .2s ease; z-index: 999;
+  }
+  .w-nav-overlay.open{ opacity:1; pointer-events:auto; }
+
+  .nav-drawer{
+    position: fixed; top:0; right:0; height:100dvh; width:88vw; max-width:360px;
+    background:#fff; box-shadow: -8px 0 20px rgba(0,0,0,.08);
+    transform: translateX(100%); transition: transform .25s ease; z-index:1000;
+    padding:24px; display:flex; flex-direction:column; gap:10px;
+  }
+  .nav-drawer.open{ transform: translateX(0); }
+  .nav-drawer a{ color:#000; font:600 16px/1.2 Raleway, Inter, sans-serif; padding:10px 6px; }
+  .drawer-sep{ border:none; border-top:1px solid var(--line-h); margin:.5rem 0; }
+
+  @media (max-width: 992px){
+    .nav{ display:none; }
+    .menu-button{ display:inline-block; }
+  }
+</style>

@@ -1,35 +1,57 @@
-<footer id="main-footer">
-  <style>
-    #main-footer {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      padding: 1rem 0;
-    }
+<!-- ===== SEGMENT 3: FOOTER ===== -->
+<footer class="footer">
+  <div class="container-footer">
+    <div class="footer-holder">
+      <div>
+        <div class="footer-subheading">
+          <div class="footer-line"></div>
+          <div class="subheading-03 footer">CONTACT</div>
+        </div>
+        <h2 class="heading-footer">tiara.dobbs@outlook.com</h2>
+        <div class="text-body-01">Copyright © 2024 Tiara Dobbs. All rights reserved.<br>Based in Sydney Australia.</div>
+      </div>
 
-    #main-footer #footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 0.5rem;
-    }
-
-    #main-footer .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    #main-footer #footer-info {
-      text-align: center;
-      color: #aaa;
-    }
-  </style>
-
-  <div id="footer-bottom">
-    <div class="container clearfix">
-      <div id="footer-info">
-        Tiara Dobbs | Sydney Based Product and UX Designer
+      <div>
+        <div class="footer-subheading">
+          <div class="footer-line"></div>
+          <div class="subheading-03 footer">CONNECT</div>
+        </div>
+        <div class="text-body-01">
+          <a class="footer-link" href="https://www.linkedin.com/in/tiara-dobbs/" target="_blank">LinkedIn</a><br>
+          <a class="footer-link" href="https://medium.com/@tiarascreative" target="_blank">Medium</a><br>
+          <a class="footer-link" href="./media/TiaraDobbs-resume.pdf" target="_blank">Resume</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  :root{
+    --maxw-f: 1320px;
+    --pad-f: clamp(16px, 4vw, 32px);
+    --text-f: #ffffff;
+    --muted-f: #444;
+    --line-f: #e6e6e6;
+  }
+  .footer{ border-top:1px solid var(--line-f); background:#000000; }
+  .container-footer{ width:min(100%, var(--maxw-f)); margin-inline:auto; padding-inline: var(--pad-f); }
+  .footer-holder{
+    display:grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px);
+    align-items:start; padding-block: clamp(32px, 6vw, 64px);
+  }
+  @media (max-width: 767px){ .footer-holder{ grid-template-columns:1fr; } }
+
+  .footer-subheading{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .footer-line{ width:40px; height:2px; background:#000; opacity:.8; }
+  .subheading-03.footer{ font:700 10px/1 Raleway, Inter, sans-serif; letter-spacing:.28em; color:#000; }
+
+  .heading-footer{
+    margin:0 0 8px;
+    font:700 clamp(24px, 3.5vw, 32px)/1.2 Raleway, Inter, sans-serif;
+    color: var(--text-f); word-break:break-word;
+  }
+  .text-body-01{ color: var(--muted-f); }
+  .footer-link{ color:#0c4571; text-decoration:none; }
+  .footer-link:hover{ text-decoration:underline; }
+</style>
