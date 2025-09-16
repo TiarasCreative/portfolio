@@ -1,57 +1,46 @@
-<!-- ===== SEGMENT 3: FOOTER ===== -->
-<footer class="footer">
-  <div class="container-footer">
-    <div class="footer-holder">
-      <div>
-        <div class="footer-subheading">
-          <div class="footer-line"></div>
-          <div class="subheading-03 footer">CONTACT</div>
+<head>
+  <meta charset="UTF-8">
+  <title>Tiara's Designs</title>
+  <meta name="description" content="Tiara is a world renouned designer. Let her do your branding, marketing and logos">
+  <meta name="keywords" content="Sydney, Branding, logos, design, product design">
+  <meta name="author" content="Tiara Design">
+  <!-- Fix meta name + width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Correct path to CSS folder -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/hero.css" />
+</head>
+<body>
+    <main>
+
+
+<!-- ===== PART ONE - PROJECT OVERVIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#141414;         /* background color (editable in HTML) */
+                    --fg:#ffffff;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+
+        <div class="section__5050grid">
+          <div class="section__col">
+            <div style="width:6rem; height:3px; background:#4A90E2;; margin:0;"></div>
+            <br/>
+            <p>Copyright © 2024 Tiara Dobbs. All rights reserved.<br/>Based in Sydney Australia.</p>
+          </div>
+
+          <div class="section__col">
+            <br/>
+            <h2>Connect</h2>
+            <p><a class="footer-link" href="https://www.linkedin.com/in/tiara-dobbs/" target="_blank"><span style="color: #ffffff;">LinkedIn</span></a></p>
+            <p><a class="footer-link" href="https://medium.com/@tiarascreative" target="_blank"><span style="color: #ffffff;">Medium</span></a></p>
+            <p><a class="footer-link" href="./media/TiaraDobbs-resume.pdf" target="_blank"><span style="color: #ffffff;">Resume</span></a></p>
+      
+          </div>
+            
         </div>
-        <h2 class="heading-footer">tiara.dobbs@outlook.com</h2>
-        <div class="text-body-01">Copyright © 2024 Tiara Dobbs. All rights reserved.<br>Based in Sydney Australia.</div>
+          
       </div>
-
-      <div>
-        <div class="footer-subheading">
-          <div class="footer-line"></div>
-          <div class="subheading-03 footer">CONNECT</div>
-        </div>
-        <div class="text-body-01">
-          <a class="footer-link" href="https://www.linkedin.com/in/tiara-dobbs/" target="_blank">LinkedIn</a><br>
-          <a class="footer-link" href="https://medium.com/@tiarascreative" target="_blank">Medium</a><br>
-          <a class="footer-link" href="./media/TiaraDobbs-resume.pdf" target="_blank">Resume</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<style>
-  :root{
-    --maxw-f: 1320px;
-    --pad-f: clamp(16px, 4vw, 32px);
-    --text-f: #ffffff;
-    --muted-f: #444;
-    --line-f: #e6e6e6;
-  }
-  .footer{ border-top:1px solid var(--line-f); background:#000000; }
-  .container-footer{ width:min(100%, var(--maxw-f)); margin-inline:auto; padding-inline: var(--pad-f); }
-  .footer-holder{
-    display:grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px);
-    align-items:start; padding-block: clamp(32px, 6vw, 64px);
-  }
-  @media (max-width: 767px){ .footer-holder{ grid-template-columns:1fr; } }
-
-  .footer-subheading{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
-  .footer-line{ width:40px; height:2px; background:#000; opacity:.8; }
-  .subheading-03.footer{ font:700 10px/1 Raleway, Inter, sans-serif; letter-spacing:.28em; color:#000; }
-
-  .heading-footer{
-    margin:0 0 8px;
-    font:700 clamp(24px, 3.5vw, 32px)/1.2 Raleway, Inter, sans-serif;
-    color: var(--text-f); word-break:break-word;
-  }
-  .text-body-01{ color: var(--muted-f); }
-  .footer-link{ color:#0c4571; text-decoration:none; }
-  .footer-link:hover{ text-decoration:underline; }
-</style>
+    </section>
+  </main>
+</body>
