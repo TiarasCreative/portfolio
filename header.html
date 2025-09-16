@@ -166,75 +166,94 @@
     .nav{ display:none; }
     .menu-button{ display:inline-block; margin-left: auto; } /* auto-push to right within the 1150 frame */
   }
+
+  /* --- DROPDOWNS: remove hover gap and keep open reliably --- */
+.navbar .dropdown{
+  position: relative;
+  padding-bottom: 14px;              /* grows the hover/click area under the toggle */
+}
+.navbar .dropdown-list{
+  position: absolute;
+  top: 100%;                         /* sits flush with the toggle */
+  left: 0;
+  transform: translateY(8px);        /* visual spacing without creating a gap */
+  margin: 0;                         /* no margin gaps */
+  z-index: 2000;
+  display: none;                     /* default: hidden */
+}
+.navbar .dropdown.open .dropdown-list{
+  display: block;                    /* JS adds .open so it stays open */
+}
+
+/* Optional: still allow pure hover on pointer devices */
+@media (hover: hover){
+  .navbar .dropdown:hover .dropdown-list{ display: block; }
+}
+
+/* --- MOBILE HAMBURGER: keep it inside the header frame --- */
+@media (max-width: 992px){
+  .navbar-row{ position: relative; } /* anchor for absolute positioning */
+  .menu-button{
+    display: inline-block;
+    position: absolute;              /* pin to the container’s right pad */
+    right: var(--pad-h);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1101;                   /* above everything in the header */
+  }
+  /* ensure brand can shrink instead of pushing button off-screen */
+  .brand{ min-width: 0; }
+  .header-logo{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
 </style>
 
 <script>
 (function(){
-  // ===== Dropdowns: click to open, click outside to close (hover still works via CSS)
-  const dropdowns = document.querySelectorAll('.dropdown');
-  function closeAll(){ dropdowns.forEach(d => { d.classList.remove('open'); const t=d.querySelector('.dropdown-toggle'); t && t.setAttribute('aria-expanded','false'); }); }
+  // Keep dropdowns open on click; close on outside click or Esc.
+  const dropdowns = document.querySelectorAll('.navbar .dropdown');
+
+  function closeAll(){
+    dropdowns.forEach(d => {
+      d.classList.remove('open');
+      const t = d.querySelector('.dropdown-toggle');
+      if (t) t.setAttribute('aria-expanded','false');
+    });
+  }
 
   dropdowns.forEach(d => {
     const toggle = d.querySelector('.dropdown-toggle');
     const list   = d.querySelector('.dropdown-list');
     if (!toggle || !list) return;
 
-    // Click toggles
+    // Open/close on click. Stop bubbling so the document click handler
+    // doesn't immediately close it.
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const willOpen = !d.classList.contains('open');
       closeAll();
-      if (willOpen){ d.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
-    });
-
-    // Keep open while interacting inside the list
-    d.addEventListener('mouseenter', () => { /* CSS handles hover */ });
-    d.addEventListener('mouseleave', () => {
-      // Only close if user isn't interacting with it via click
-      if (window.matchMedia('(hover:hover)').matches){
-        d.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
+      if (willOpen){
+        d.classList.add('open');
+        toggle.setAttribute('aria-expanded','true');
       }
     });
+
+    // Keep it open while clicking inside the list
+    list.addEventListener('click', (e) => {
+      // allow navigation, but prevent the document handler from closing before the link activates
+      e.stopPropagation();
+    });
   });
 
-  // Click outside to close
+  // Close on click outside
   document.addEventListener('click', (e) => {
-    const inDropdown = e.target.closest('.dropdown');
-    if (!inDropdown) closeAll();
-  });
-  // Escape to close current
+    if (!e.target.closest('.navbar .dropdown')) closeAll();
+  }, { capture: true });
+
+  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAll();
   });
-
-  // ===== Mobile drawer
-  const btn = document.getElementById('menuButton');
-  const overlay = document.getElementById('navOverlay');
-  const drawer = document.getElementById('drawer');
-
-  function openNav(){
-    btn?.setAttribute('aria-expanded','true');
-    overlay.hidden = false;
-    overlay.classList.add('open');
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeNav(){
-    btn?.setAttribute('aria-expanded','false');
-    overlay.classList.remove('open');
-    drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    setTimeout(()=>{ overlay.hidden = true; }, 200);
-  }
-
-  btn?.addEventListener('click', (e)=>{
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    expanded ? closeNav() : openNav();
-  });
-  overlay?.addEventListener('click', closeNav);
-
 })();
 </script>
