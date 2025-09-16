@@ -15,18 +15,147 @@
   <div id="header"></div>
 
   <main>
-    <!-- CONTENT GOES BELOW HERE -->
-     <!-- Hero: Full viewport with sliding titles -->
-    <section class="hero" style="background-image: url('./images/Where-in.space_.png');">
-      <div class="hero__inner">
-        <h2 class="hero__title">where-in.space</h2>
-        <h3 class="hero__subtitle">Lighting & product design</h3>
+    <!-- WHERE-IN.SPACE -->
+        <section class="parallax-hero"
+          style="background-image:url('./media/Where-in.space_.png');
+                --panel: rgba(250, 71, 71, 0.9);
+                --panel-fg: #fefefe;
+                --panel-width: 50%;
+                --frame-max: 1600px;">
+          
+          <!-- Hit-area + coloured overlay (enables hover on the panel only) -->
+          <span class="panel-overlay" aria-hidden="true"></span>
+
+          <div class="parallax-inner">
+            <div class="project-teaser" style="--accent:#ffffff;">
+              <!-- Vertical label -->
+              <div class="subheading-03 homepage">PRODUCT&nbsp;DESIGN</div>
+
+              <!-- Line -->
+              <div style="width:1px; height:60px; background:#ffffff;"></div>
+
+              <!-- Space -->
+              <span class="spacer"></span>
+
+              <!-- Icon -->
+              <span class="icon" aria-hidden="true">
+                <img src="./media/where-in.space/whereinspace-logo.png" alt="where-in.space-logo"
+                    style="max-width:20%; display:block; margin:0;"> <!-- <- was margin:0 auto -->
+              </span>
+
+
+              <!-- Title -->
+              <h3><span style="color:#ffffff"><b>Where-in.space</b></span></h3>
+
+              <!-- Small paragraph -->
+              <p class="desc"><span style="color:#ffffff;">Prototyping an indoor positioning system with consumer-grade hardware to assess architectural spaces after construction. </span></p>
+
+              
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== PART ONE - PROJECT OVERVIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #f54444;"><h5 id="section-title">PART ONE</h5></span>
+          <h2 id="section-title"><b>Project Overview</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+
+        <div class="section__5050grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #f54444;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b>The Opportunity</b></h3>
+              <br/>
+            <p>Many organisations invest heavily in finding ways to differentiate themselves through ideas, concepts, and 
+              strategies. One way of doing this is through <b>encouraging more face-to-face interactions </b> amongst workers.
+              <br/><br/>
+              In a workplace, encouraging face-to-face interactions through design is one of the main goals of an open-plan 
+              hot-desk style office space, and yet the <b>tools required to test how effective these spaces do not exist.</b> For years, 
+              organisations invested in hot-desking and open studios to spark collaboration, yet lacked 
+              trustworthy post-occupancy tools to validate impact. Decisions were driven by anecdotes, 
+              fit-outs were hard to justify, and valuable spaces were under-used—limiting spontaneous 
+              connection and eroding confidence in workplace strategy.
+              </p>
+
+              <p>But the main question remained: <b>What made a good, flexible, hot-desking environment?</b></p>
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#f54444; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            <p><b>ARUP | BVN | UNSW</b><br/>
+            <b>Role:</b> Product Design Lead <br/>
+            <br/>
+            <b>Key Responsibilities</b> 
+            <ul>
+              <li>Developed Algorithm to identify Face-to-face interactions</li>
+              <li>Design Hardware for low-cost commodity hardware Beacons and receiever Stations</li></b>
+              <li>Preliminary testing for proof of concept</li></b>
+              <li>Experimentation designer and instigator</li></b>
+              <li>Stakeholder relations and funding coordinator</li></b>
+              <li>Visualisation using Python and Grasshopper</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <H2>WHERE-IN.SPACE</H2>
+    <!-- ===== PROJECT OVERVIEW - THE OPPORTUNITY ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#1C2A4A;         /* background color (editable in HTML) */
+                    --fg:#ffffff;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <div class="section__5050grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #f54444;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b> Mission</b></h3>
+              <br/>
+            <p>Our mission was to turn open-plan intent into measurable outcomes by building a low-cost, real-time 
+              <b>indoor positioning system that quantifies face-to-face interactions.</b> <br/><br/>
+              By tackling this gap head-on, our goal was to provide a privacy-first, evidence-based way to 
+              test and iterate workplace design combining commodity beacons and receiver stations, 
+              interaction-detection algorithms, and clear visualisations—to rebuild trust in design decisions, 
+              align stakeholders, and measurably increase in-person collaboration. In partnership with BVN, ARUP, 
+              and UNSW, we proved feasibility through a practical proof-of-concept and created a path to scale. </p></p>
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#f54444;; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            
+            <h3><b> Core outcomes</b></h3><br/>
+            <p><span style = "color: #f54444;"><b>01</b></span> <b>Proof of concept:</b> Developed a proof of concept for large scale </p><br/>
+            <p><span style = "color: #f54444;"><b>01</b></span> <b>Damaged Reputation:</b> The platform’s poor performance branded the company as a provider of low-quality software, weakening industry credibility.</p><br/>
+            <p><span style = "color: #f54444;"><b>01</b></span> <b>Stalled Growth:</b> Instead of driving adoption, Trips became a liability, limiting opportunities for expansion and reducing client acquisition.</p><br/>
 
-    <!-- CONTENT GOES ABOVE HERE -->
+            <br/>
+            <h3><b> Post Launch of Fix Impact</b></h3><br/>
+            <p><span style = "color: #f54444;"><b>01</b></span> 80% of users reported to be promoters of the platform after major release.</p><br/>
+            <p><span style = "color: #f54444;"><b>02</b></span> Restored trust and reputation for Ankor in the industry</p><br/>
+            <p><span style = "color: #f54444;"><b>03</b></span> Users reported they feel supported with carefully curated help information for self paced training.</p><br/>
+            <p><span style = "color: #f54444;"><b>03</b></span> Number of clicks to create a presentation have declined by 200% when compared with stats 6 months before launch changes. </p><br/>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
 
   </main>
   <!-- Inject Footer here -->
