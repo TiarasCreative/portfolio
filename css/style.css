@@ -399,6 +399,18 @@ html, body { height: 100%; margin: 0; }
 .section__header > * + * { margin-top: .5rem; }
 .section__header { text-align: center; }
 
+.section__104545grid {
+  display: grid;
+  grid-template-columns: 10fr 45fr 45fr; /* ≈ 10%, 45%, 45% */
+  gap: 24px; /* whatever you use */ 
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
+
+
+
+
 .section__5050grid {
   display: grid;
   grid-template-columns: 1fr 1fr;              /* two even columns */
