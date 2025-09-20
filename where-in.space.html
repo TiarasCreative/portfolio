@@ -325,8 +325,8 @@
 
     <!-- ===== EXTENSIVE TECHNOLOGY REVIEW ===== -->
     <section class="fullbleed-section"
-            style="--bg:#ffffff;         /* background color (editable in HTML) */
-                    --fg:#333333;         /* optional text color */
+            style="--bg:#540101;         /* background color (editable in HTML) */
+                    --fg:hsl(0, 0%, 100%);         /* optional text color */
                     --gap:2.5rem;           /* gap between columns */
                     --pad-block:clamp(40px,6vw,96px);">
       <div class="section__inner" aria-labelledby="section-title">
@@ -341,145 +341,145 @@
             -->
 
           <section id="ips-tech-review" aria-labelledby="ips-title" style="font-family: Raleway;">
-            <p style="margin-top:0;">
+            <p style="margin-top:0; color:#fff; border-radius: 1rem;">
               A compact technology review of common IPS approaches you can build with commodity hardware (Raspberry Pi, USB adapters, smartphones, cheap beacons, cameras, etc.).
             </p>
 
             <div style="overflow:auto; margin-top:1rem;">
-              <table role="table" style="width:100%; border-collapse:collapse; min-width:900px;">
+              <table role="table" style="width:100%; border-collapse:collapse; min-width:900px; color:#fff;">
                 <thead>
-                  <tr style="background:#f4f6f8; text-align:left;">
-                    <th style="padding:12px 16px; border-bottom:1px solid #e1e6ea; width:18%;">Method</th>
-                    <th style="padding:12px 16px; border-bottom:1px solid #e1e6ea; width:12%;">Typical Accuracy</th>
-                    <th style="padding:12px 16px; border-bottom:1px solid #e1e6ea; width:12%;">Typical Cost</th>
-                    <th style="padding:12px 16px; border-bottom:1px solid #e1e6ea; width:29%;">Pros</th>
-                    <th style="padding:12px 16px; border-bottom:1px solid #e1e6ea; width:29%;">Cons / When to Avoid</th>
+                  <tr style="background:#e57373; text-align:left; border-radius: 1rem;"> <!-- light red header -->
+                    <th style="padding:12px 16px; border-bottom:1px solid #b44a4a; width:18%; border-top-left-radius: 1rem;">Method</th>
+                    <th style="padding:12px 16px; border-bottom:1px solid #b44a4a; width:12%;">Typical Accuracy</th>
+                    <th style="padding:12px 16px; border-bottom:1px solid #b44a4a; width:12%;">Typical Cost</th>
+                    <th style="padding:12px 16px; border-bottom:1px solid #b44a4a; width:29%;">Pros</th>
+                    <th style="padding:12px 16px; border-bottom:1px solid #b44a4a; width:29%; border-top-right-radius: 1rem;">Cons / When to Avoid</th>
                   </tr>
                 </thead>
                 <tbody>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>Wi-Fi Fingerprinting</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">2–8 m</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low–Medium<br/>(no infra cost if APs exist)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>Wi-Fi Fingerprinting</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">2–8 m</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low–Medium<br/>(no infra cost if APs exist)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Uses existing Wi-Fi infrastructure.<br>
                       • Works well in dense AP environments.<br>
                       • Easy to prototype with Raspberry Pi / phones.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Sensitive to environmental & AP changes (recalibration needed).<br>
                       • Fingerprint collection is labour-intensive for large spaces.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>Wi-Fi Trilateration / RSSI</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">3–15 m</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low–Medium</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>Wi-Fi Trilateration / RSSI</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">3–15 m</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low–Medium</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Conceptually simple (distance estimates to APs).<br>
                       • No additional beacons required if AP locations known.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • RSSI↔distance mapping is noisy indoors; poor accuracy without calibration.<br>
                       • Requires multiple visible APs with known locations.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>BLE Beacons (iBeacon / Eddystone)</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">1–5 m (proximity) / ~1–3 m with fingerprinting</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low<br/>(\$5–\$30 per beacon)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>BLE Beacons (iBeacon / Eddystone)</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">1–5 m (proximity) / ~1–3 m with fingerprinting</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low<br/>(\$5–\$30 per beacon)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Inexpensive, easy to deploy.<br>
                       • Good for proximity and zone detection.<br>
                       • Works with phones and Pi Bluetooth dongles.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Battery maintenance for beacons.<br>
                       • RSSI still noisy; careful placement required for consistent zones.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>RFID / NFC</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">< 1 m (proximity)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low (tags & readers cheap)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>RFID / NFC</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">< 1 m (proximity)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low (tags & readers cheap)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Very reliable for explicit proximity / checkpoints.<br>
                       • Simple to implement for access control or object tagging.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Not suitable for continuous tracking across a whole floor.<br>
                       • Requires users/devices to be near tags/readers.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>Cellular (GSM/LTE)</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">10–100s m (coarse)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low (uses phones)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>Cellular (GSM/LTE)</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">10–100s m (coarse)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low (uses phones)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • No extra infrastructure when using phones.<br>
                       • Useful as coarse fallback outdoors or mixed environments.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Very coarse indoors — typically not useful alone for room-level accuracy.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>UWB (Ultra-Wideband)</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">0.1–0.5 m</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Medium–High<br/>(anchor kits & tags)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>UWB (Ultra-Wideband)</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">0.1–0.5 m</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Medium–High<br/>(anchor kits & tags)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • High precision and low latency.<br>
                       • Great for real-time tracking (assets, people).
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Requires UWB hardware (not as ubiquitous though becoming common).<br>
                       • Higher cost and setup complexity relative to BLE/Wi-Fi.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>Camera + Visual SLAM</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">0.1–1 m (depending on setup)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low–Medium (cameras + compute)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1e4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>Camera + Visual SLAM</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">0.1–1 m (depending on setup)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low–Medium (cameras + compute)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • High spatial detail; builds maps and tracks without beacons.<br>
                       • Good for robotics and AR use cases.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Sensitive to lighting and visual occlusion.<br>
                       • Privacy concerns if capturing video in workspaces.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>QR Codes / Visual Markers</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">< 0.5 m (when in view)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Very Low (print markers)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>QR Codes / Visual Markers</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">< 0.5 m (when in view)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Very Low (print markers)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Extremely cheap and robust for known checkpoints.<br>
                       • No radio infrastructure; easy to implement.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Requires line-of-sight and active scanning.<br>
                       • Not suitable for continuous free-roam tracking.
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;"><strong>IMU Dead-Reckoning / PDR</strong></td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Meter-level; drifts over time</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">Low (built into phones)</td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;"><strong>IMU Dead-Reckoning / PDR</strong></td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Meter-level; drifts over time</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">Low (built into phones)</td>
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Good for short-term tracking between fixes.<br>
                       • Works offline and on-device.
                     </td>
-                    <td style="padding:12px 16px; border-bottom:1px solid #edf1f4;">
+                    <td style="padding:12px 16px; border-bottom:1px solid #dddddd;">
                       • Accumulated drift requires periodic correction from RF/vision fixes.
                     </td>
                   </tr>
@@ -497,10 +497,13 @@
                       • Higher integration & maintenance effort.
                     </td>
                   </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
+
+                </tbody>
+              </table>
+            </div>
+
+          </section>
+              
           </div>
         </div>
         <br/>
@@ -515,9 +518,154 @@
       </div>
     </section>
     
+    <!-- ===== NEW APPROACH - WEARABLE BLE ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #f54444;"><h5 id="section-title">PART THREE</h5></span>
+          <h2 id="section-title"><b>A New Approach</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+        <br/>
+        <p style="max-width: 420px; margin: auto; text-align: center; ">After extensive research into existing technologies, we decided to build a custom solution using 
+          wearable BLE beacons and Raspberry Pi receivers to track face-to-face interactions in an office environment.</b> </p>
+        <br/>
+        <span style = "color: #f54444;"><h5 id="section-title">A NEW APPROACH</h5></span> <br/>
+          <h3 id="section-title"><b>How it worked</b></h3>
+          <br/>
+            
+        <div class="section__25252525grid">
+          
+          <div class="section__col">
+              <img src="./media/where-in.space/women-beacon.png" style="max-width:auto; height:200; display:block; border-radius: 1rem; ">
+          </div>
 
+          <div class="section__col">
+            <img src="./media/where-in.space/raspberrypi.png" style="max-width:auto; height:200; display:block; border-radius: 1rem; ">
+          </div>
+          <div class="section__col">
+            <img src="./media/where-in.space/databaseandcloud.png" style="max-width:auto; height:200;; display:block; border-radius: 1rem; ">
+          </div>
+          <div class="section__col">
+            <img src="./media/where-in.space/Visualisation.png" style="max-width:auto; height:200;; display:block; border-radius: 1rem; ">
+          </div>
+      </div>
+      </div>
+    </section>
 
+    <!-- ===== PROTOTYPE - BEACONS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fde9e9;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <span style = "color: #f54444;"><h5 id="section-title">THE PROTOTYPE</h5></span><br/>
+          <h3 id="section-title"><b>Wearable Beacons</b></h3>
+        
+        <div class="section__5050grid">
+          <div class="section__col">
+            <p><span style = "color: #f54444;"><b>01</b></span> <b>Voluntary Participation: </b>participants can easily opt in or out by wearing or removing the beacon.</p>
+            <p><span style = "color: #f54444;"><b>02</b></span> <b>Low setup overhead: </b>no need for phones or apps; the beacon works independently once powered.</p>
+            <p><span style = "color: #f54444;"><b>03</b></span> <b>Consistent signal source </b>each wearable broadcasts at a steady rate, giving more reliable readings than phones with variable Bluetooth behaviour.</p>
+            <p><span style = "color: #f54444;"><b>04</b></span> <b>any receiver (Raspberry Pi, phone, laptop with Bluetooth) can detect them, so you’re not locked into a single device ecosystem.</p>
+            <p><span style = "color: #f54444;"><b>05</b></span> <b>Battery efficient: </b>BLE beacons often last weeks to months on a coin cell, reducing charging/maintenance needs.</p>
+            <p><span style = "color: #f54444;"><b>06</b></span> <b>Real-time-tracking: </b>location updates can be frequent (e.g., every second) without draining user devices.</p>
+            <br/>
+            <p>In addition to the above, I hypothesised the beacons, <b>when worn properly could be used to determine Field of view. </b>A very important concept when calculating Interactions</p>
+            
+          </div>
+          <div class="section__col">
+            <img src="./media/where-in.space/Where-in.space_.png" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+            <p><i>Wearable Bluetooth Beacon - A.K.A 'The Sensicorn'</i></p><br/>
+            <img src="./media/where-in.space/Picture-1.png" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+            <p><i>A participant posing with a beacon</i></p>
+          </div>
 
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROTOTYPE - RECEIEVERS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <span style = "color: #f54444;"><h5 id="section-title">THE PROTOTYPE</h5></span><br/>
+          <h3 id="section-title"><b>Receievers</b></h3>
+        
+        <div class="section__5050grid">
+          <div class="section__col">
+            <img src="./media/where-in.space/Hardware-design.png" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+            <p><i>In development render of the Receiever and its enclosure</i></p><br/>
+          </div>
+          <div class="section__col">
+            <img src="./media/where-in.space/hardware3.jpg" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+            <p><i>Assembled receiver station</i></p><br/>
+            <img src="./media/where-in.space/Lids (1).jpg" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+            <p><i>A progress shot taken while 3D printing parts for the Receiever station hardware enclosure</i></p><br/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DETERMINE FIELD OF VIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fde9e9;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #f54444;"><h5 id="section-title">PART FOUR</h5></span>
+          <h2 id="section-title"><b>Determining the Field of View</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+        <div class="section__5050grid">
+          <div class="section__col">
+            <h4><b>Aim</b></h4>
+            <p>To determine whether beacon signal strength can be used to infer the facing direction
+              of a participant, thereby distinguishing face-to-face orientation in indoor positioning systems.</p>
+              <br/>
+              <h4><b>Hypothesis</b></h4>
+            <p>If a participant is facing directly toward a receiver base station, then the beacon’s signal 
+              strength received at that station will be at its maximum. Conversely, when the participant faces 
+              away, the participant’s body will obstruct the transmission path, resulting in a lower signal strength.</p>
+              <br/>
+              <h4><b>Methodology</b></h4>
+            <p>Participants: A single participant was recruited for this pilot experiment.<br/>
+              <b>Apparatus and Materials</b>
+              <br/>
+              <ul>
+                <li>One wearable beacon transmitter.</li>
+                <li>Four receiver base stations capable of measuring received signal strength (RSSI).</li>
+                <li>Indoor room with minimal interference and controlled spacing.</li>
+                <li>Data logging system for recording signal strength values.</li>
+              </ul>
+              <p><b>Data Analysis</b></p>
+              <ul>
+                <li>Recorded RSSI values were compiled for each 15-degree increment.</li>
+                <li>A polar plot was generated to visualize the variation in signal strength as a function of participant orientation relative to each base station.</li>
+                <li>Peaks in RSSI values were interpreted as moments when the participant was directly
+              </ul>
+              </p>
+          </div>
+          <div class="section__col">
+            <
+            
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
