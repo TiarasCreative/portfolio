@@ -408,7 +408,14 @@ html, body { height: 100%; margin: 0; }
   align-items: stretch; /* ⬅️ instead of start */
 }
 
-
+.section__2020202020grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* ≈ 5 equal frames */
+  gap: 24px; /* whatever you use */ 
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: start;
+  align-items: stretch; /* ⬅️ instead of start */
+}
 
 
 .section__5050grid {
@@ -474,6 +481,13 @@ html, body { height: 100%; margin: 0; }
   align-items: stretch; /* ⬅️ instead of start */
 }
 
+.section__25252525grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;              /* four even columns */
+  gap: var(--gap, 2rem);                     /* small space between them */
+  margin-top: clamp(16px, 3vw, 32px);
+  align-items: stretch; /* ⬅️ instead of start */
+}
 
 
 .section__col > *:first-child { 
@@ -484,7 +498,7 @@ html, body { height: 100%; margin: 0; }
 
 /* Stack to one column on narrow screens */
 @media (max-width: 900px) {
-  .section__5050grid, .section__2575grid, .section__7525grid, .section__3060grid, .section__6030grid, .section__303030grid { grid-template-columns: 1fr; }  /* fixed class name */
+  .section__5050grid, .section__2575grid, .section__25252525grid, .section__7525grid, .section__3060grid, .section__6030grid, .section__303030grid, .section__2020202020grid { grid-template-columns: 1fr; }  /* fixed class name */
 }
 
 /* Optional: extra comfy spacing on very large screens */
