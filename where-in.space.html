@@ -106,7 +106,8 @@
               <li>Stakeholder relations and funding coordinator</li></b>
               <li>Visualisation using Python and Grasshopper</li>
             </ul>
-            <br/>
+            <p><a href="https://papers.cumincad.org/data/works/att/caadria2019_286.pdf" target="_blank" style="color: #333333;"><u></ul>Read my published work in CAADRIA</u></a></p>
+
             
           </div>
         </div>
@@ -619,14 +620,14 @@
 
     <!-- ===== DETERMINE FIELD OF VIEW ===== -->
     <section class="fullbleed-section"
-            style="--bg:#fde9e9;         /* background color (editable in HTML) */
+            style="--bg:#f1f1f1;         /* background color (editable in HTML) */
                     --fg:#333333;         /* optional text color */
                     --gap:2.5rem;           /* gap between columns */
                     --pad-block:clamp(40px,6vw,96px);">
       <div class="section__inner" aria-labelledby="section-title">
         <header class="section__header">
-          <span style = "color: #f54444;"><h5 id="section-title">PART FOUR</h5></span>
-          <h2 id="section-title"><b>Determining the Field of View</b></h2>
+          <span style = "color: #f54444;"><h5 id="section-title">EXPERIMENT 1</h5></span>
+          <h2 id="section-title"><b>Determining Field of View</b></h2>
           <!-- optional subheading -->
           <!-- <p class="section__sub">A short subtitle can go here.</p> -->
         </header>
@@ -658,16 +659,340 @@
                 <li>Peaks in RSSI values were interpreted as moments when the participant was directly
               </ul>
               </p>
+              <h4><b>Procedure</b></h4>
+              <br/>
+              <p>
+                <ul>
+                  <li>The participant wore a wearable beacon device fixed securely to the chest to ensure consistent orientation relative to body position.</li>
+                  <li>The participant was positioned at the center of the room.</li>
+                  <li>Four receiver base stations were placed one meter away from the participant, positioned at the cardinal points around the participant (0°, 90°, 180°, and 270°).</li>
+                  <li>The participant rotated in 15-degree increments every 10 seconds, pausing at each angle to allow signal data to stabilize.</li>
+                  <li>At each orientation, RSSI values were recorded simultaneously from all four base stations.</li></li>
+                </ul>
+              </p>
           </div>
           <div class="section__col">
-            <
+              <h4><b>Apparatus</b></h4>
+              <br/>
+              <img src="./media/where-in.space/APPARATUS.png" style="max-width:100%; height:auto; display:block; border-radius: 1rem; ">
+              <br/>
+              <P>
+                <ul>
+                  <li>20 Minute experiment</li>
+                  <li>4 x Raspberrie pies stationed at 1, 2 3 and 4 meters apart.</li>
+                  <li>1 Estimote Beacons</li>
+                  <li>4 cycles</li>
+                  <li>Turning 15degree increments</li>
+                </ul>
+              </P>
+              <br/>
+              
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOV RESULTS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fce8e8;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #f54444;"><h5 id="section-title">PART FOUR</h5></span>
+          <h2 id="section-title"><b>Results</b></h2>
+          <br/>
+          <p style="max-width: 420px; margin: auto; text-align: center; 
+          ">The results showed peeks when the participant was facing the beacon, 
+          and gullies as they turn away. This meant when the signal is the strongest, 
+          and with a certian distance, we can infer the participants is facing the reciever. 
+          </p>
+        </header>
+        <div class="section__7525grid">
+          <div class="section__col">
+            <img src="./media/where-in.space/ARUP_WEDNESDAY_SESSION-1.jpg" style="max-width:100%; height:auto; margin: auto; display:block; border-radius: 1rem; border: 3px solid #e57373; ">
+            
+          </div>
+          <div class="section__col">
+            <h4><b>Conclusion</b></h4>
+            <p>The experiment demonstrated that wearable BLE beacons can provide directional cues based on signal strength
+               variations as a participant rotates. Peaks in RSSI values corresponded to orientations where the participant
+               faced directly toward a receiver, while lower values occurred when facing away. 
+               <br/><br/>
+               This suggests that with
+               multiple receivers and appropriate calibration, <b>it is feasible to infer facing direction </b>and thereby
+               distinguish face-to-face interactions in indoor environments. Further studies with more participants and
+               varied settings are needed to validate and refine this approach.</p>
+          </div>
+          
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL OFFICE ROLLOUT ===== -->
+<section class="fullbleed-section"
+        style="--bg:#ffffff;
+               --fg:#333333;
+               --gap:2.5rem;
+               --pad-block:clamp(40px,6vw,96px);">
+  <div class="section__inner" aria-labelledby="section-title">
+    <header class="section__header">
+      <h5 style="color:#f54444;">EXPERIMENT 2</h5>
+      <h2 id="section-title"><b>Full Office Roll Out</b></h2>
+    </header>
+
+    <div class="section__5050grid">
+      <!-- Left column -->
+      <div class="section__col">
+        <h4><b>Aim</b></h4>
+        <p>Evaluate whether a Bluetooth Low Energy (BLE) indoor positioning system (IPS) built with commodity
+           hardware can reliably track employee movement across an entire office floor and generate accurate 
+           journey maps for analysis.</p>
+
+        <h4><b>Hypothesis</b></h4>
+        <p>Deploying BLE beacons with overlapping coverage across the floorplan, combined with participants 
+           wearing BLE tags, will produce location data with sufficient temporal and spatial accuracy to reconstruct 
+           meaningful journey maps (e.g., common paths, dwell areas, and handoffs between zones).</p>
+
+        <h4><b>Methodology</b></h4>
+        <p>Participants:</p>
+        <ul>
+          <li>300 office staff (opt-in, consented).</li>
+          <li>Each participant assigned a wearable BLE beacon/tag labeled with an anonymous ID.</li>
+        </ul>
+      </div>
+
+      <!-- Right column -->
+      <div class="section__col">
+        <h4><b>Apparatus</b></h4><br/>
+        <img src="./media/where-in.space/pitt_floorplan_stations_main_only.png" style="max-width:100%; height:auto; display:block; border-radius:1rem;">
+
+        <ul>
+          <li>Commodity BLE beacons (mains or battery powered) installed on walls/ceilings.</li>
+          <li>Receiver network: fixed gateways (or smartphones/Raspberry Pis) to scan BLE advertisements and forward RSSI + timestamps to a central server.</li>
+          <li>Office floorplan mapped with zones/areas of interest (desks, meeting rooms, common areas).</li>
+          <li>Beacon layout: grid/zone placement to ensure full coverage with ~20–30% overlap; placement density derived from vendor-stated radius and in-situ RSSI tests (aim for ≥-70 dBm at zone edges).</li>
+          <li>Time sync across gateways (NTP).</li>
+          <li>Backend: ingestion service, database, and processing pipeline (RSSI smoothing, multi-gateway fusion, zone inference).</li>
+          <li>Visualization: journey-map tool to render paths, dwell heatmaps, and transitions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPLOYMENT ===== -->
+<section class="fullbleed-section"
+        style="--bg:#540101;  ;
+               --fg:#ffffff;
+               --gap:2.5rem;
+               --pad-block:clamp(40px,6vw,96px);">
+  <div class="section__inner" aria-labelledby="section-title">
+    <header class="section__header">
+      <h5 style="color:#f54444;">EXPERIMENT 2</h5>
+      <h2 id="section-title"><b>Full Office Roll Out</b></h2>
+    </header>
+
+    <div class="section__303030grid">
+      <!-- Left column -->
+      <div class="section__col">
+        <img src="./media/where-in.space/L3.png" style="max-width:100%; height:auto; display:block; border-radius:1rem;">
+      </div>
+
+      <!-- Right column -->
+      <div class="section__col">
+        <img src="./media/where-in.space/L2.png" style="max-width:100%; height:auto; display:block; border-radius:1rem;">
+      </div>
+      <div class="section__col">
+        <img src="./media/where-in.space/beacon-1.png" style="max-width:100%; height:auto; display:block; border-radius:1rem;">
+      </div>
+    </div>
+
+    
+    <div class="section__5050grid">
+        <!-- Left column -->
+        <div class="section__col">
+            <h4><b>Data Processing</b></h4>
+            <ul>
+              <li>Clean data (remove outliers, duplicate packets, clock drifts).</li>
+              <li>Apply smoothing (e.g., exponential moving average) and multi-gateway fusion (e.g., strongest-signal or weighted centroid).</li>
+              <li>Infer zone transitions and approximate paths; compute dwell time per zone and transition matrices.</li>
+              <li>Generate individual and aggregate journey maps.</li>
+            </ul>
+            <br/>
+            <h4><b>Evaluation Metrics</b></h4>
+            <ul>
+              <li><b>Coverage: </b>% of floor area with usable signal; % time per participant with valid location.</li>
+              <li><b>Accuracy: </b>Zone-level accuracy vs. ground truth spot checks; median transition detection delay.</li>
+              <li><b>Stability: </b>Packet loss rate, gateway uptime, tag battery life.</li>
+              <li><b>Utility: </b>Ability of journey maps to reveal high-traffic corridors and bottleneck zones (qualitative review with facilities/ops).</li>
+            </ul>
+          </div>
+          <div class="section__col">
+            <h4><b>Ethics &amp; Privacy</b></h4>
+            <ul>
+              <li>Informed consent, anonymization, opt-out at any time.</li>
+              <li>Aggregate reporting; no individual performance tracking.</li>
+              <li>Data retention and access controls defined prior to rollout.</li>
+            </ul>
+            <br/>
+            <h4><b>Expected Outcome</b></h4>
+            <p>
+              Zone-level accuracy sufficient to produce clear journey maps (heatmaps and Sankey-style transitions),
+              enabling insights into space utilization, collaboration hotspots, and congestion areas. Potential limitations
+              include multipath interference and transient RSSI drops near dense metal/glass; these are mitigated by
+              overlap, calibration, and filtering.
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOR RESULTS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fce8e8;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #f54444;"><h5 id="section-title">PART FIVE</h5></span>
+          <h2 id="section-title"><b>Results</b></h2>
+          <br/>
+          <p style="max-width: 420px; margin: auto; text-align: center;">
+          Based on the results, we were able to determine each participants approximate path throughout the experiment.
+          </p>
+        </header>
+        <div class="section__2575grid">
+          <div class="section__col">
+            <img src="./media/where-in.space/Picture-1 (1).gif" style="max-width:100%; height:auto; margin: auto; 
+            display:block; border-radius: 1rem; border: 3px solid #e57373;">
+          <p><i>Detected signals for Participant ‘297’ for 1 minute. </i></p>
+          <br/>
+          </div>
+        <div class="section__col">
+          <img src="./media/where-in.space/shortestpath.jpg" style="max-width:100%; height:auto; margin: auto; display:block; border-radius: 1rem; border: 3px solid #e57373;">
+          <p><i>Each participant’s journey through the office was carefully analysed by estimating their 
+            location every minute, creating a series of positioning markers throughout the day. 
+            The office floor was then divided into a grid, and a shortest-path algorithm was applied to 
+            approximate the most likely route each participant followed.</p></i></p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPLOYMENT ===== -->
+  <section class="fullbleed-section"
+          style="--bg:#ffffff;  ;
+                --fg:#333333;
+                --gap:2.5rem;
+                --pad-block:clamp(40px,6vw,96px);">
+    <div class="section__inner" aria-labelledby="section-title">
+      <header class="section__header">
+        <h5 style="color:#f54444;">EXPERIMENT 2</h5>
+        <h2 id="section-title"><b>Results</b></h2>
+      </header>
+
+      <div class="section__7525grid">
+        <!-- Left column -->
+        <div class="section__col">
+          <img src="./media/where-in.space/Picture-661.png" style="max-width:100%; height:auto; display:block; border-radius:1rem; border: 3px solid #e57373;">
+          <p><i>Some of the participants paths as a progress shot during analysing the data</i></p>
+        </div>
+        <div class="section__col">
+          <div style="max-width:100%; height:auto; display:block; ">
+            <h4><b>Conclusion</b></h4>
+            <p>The BLE-based indoor positioning system successfully tracked employee movement across the office floor,
+              generating accurate journey maps that revealed common paths, dwell areas, and zone transitions.</p>
+            
+            <p>Overall, the deployment demonstrated that a commodity BLE IPS can provide valuable insights into workplace dynamics,
+              supporting data-driven decisions for office design and operations. Future work will focus on refining accuracy,
+              expanding participant numbers, and exploring real-time applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== DETERMINE FACE-TO-FACE INTERACTIONS ===== -->
+  <section class="fullbleed-section"
+          style="--bg:#ffffff;  ;
+                --fg:#333333;
+                --gap:2.5rem;
+                --pad-block:clamp(40px,6vw,96px);">
+    <div class="section__inner" aria-labelledby="section-title">
+      <header class="section__header">
+        <h5 style="color:#f54444;">PART SIX</h5>
+        <h2 id="section-title"><b>Determine when Face-to-face <br/>Interactions occurred</b></h2>
+      </header>
+      <br/>
+
+      <p style="max-width: 420px; margin: auto; text-align: center;">There is no accepted baseline definition for what
+         constitutes a face-to-face interaction; therefore, definitions need to be made
+          concerning what a face-to-face interaction is or at least how we measure the 
+          probability that an interaction occurred.</p>
+
+      <div class="section__7525grid">
+        <!-- Left column -->
+        <div class="section__col">
+          <img src="./media/where-in.space/face-to-face-algorithm (1).webp" style="max-width:100%;
+           height:auto; display:block; border-radius:1rem;">
+           <br/>
+           <p>Algorithm outlining the variables to calculate Face-to-Face probability</p>
+        </div>
+        <div class="section__col">
+          <p>W<sup>a</sup> = The weighted probability value associated with angle. </p>
+          <p>W<sup>d</sup> = The weight to modify probability based on distance. </p>
+          <p>m</sup> = Represents the value added to the probability if the scenario is within a meeting room. </p>
+          <p>G</sup> = (absolute obstructions e.g. walls) the weighted probability value associated with if there is an obstruction for a clear line of sight. </p>
+          <p>W<sup>m</sup> = The weight to modify the influence this term has on the result. </p>
+          <br/>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HeatMap ===== -->
+  <section class="fullbleed-section"
+          style="--bg:#ffffff;  ;
+                --fg:#333333;
+                --gap:2.5rem;
+                --pad-block:clamp(40px,6vw,96px);">
+    <div class="section__inner" aria-labelledby="section-title">
+      <header class="section__header">
+        <h5 style="color:#f54444;">PART SEVEN</h5>
+        <h2 id="section-title"><b>Heatmap</b></h2>
+      </header>
+      <br/>
+      <p style = "max-width: 420px; margin: auto; text-align: center;"> The probability value represents a colour given to cell representing a 'state'. 
+              The higher the number of interactions in relation to the total number of interactions, the higher the percentage 
+              and the redder the colour.</p>
+
+
+      <div class="section__7525grid">
+        <!-- Left column -->
+        <div class="section__col">
+          <video autoplay loop muted playsinline style="width:100%; max-width:100%; border: 3px solid #CBD2F2; border-radius: 1rem;">
+              <source src="./media/where-in.space/Visualisation-floorplan.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <div class="section__col">
+          <div style="max-width:100%; height:auto; display:block; ">
+            <h4><b>Conclusion</b></h4>
+            <p>We were able to visualise 'Hot zones' and 'Cold zones' within the data </p>
+            <img src="./media/where-in.space/architectural_floor_heatmap 1.png" style="max-width:100%; height:auto; display:block; border-radius:1rem;">
             
           </div>
         </div>
       </div>
-    </section>
-
-
+    </div>
+  </section>
 
   </main>
   <!-- Inject Footer here -->
