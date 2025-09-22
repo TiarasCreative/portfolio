@@ -927,3 +927,8 @@ html, body { height: 100%; margin: 0; }
   .pd-hero__dot, .pd-hero__cta svg{ animation: none; }
 }
 
+
+.parallax-section {
+      height: 100vh; /* Full screen height */
+      background: var(--bg) center / cover no-repeat fixed;
+    }
