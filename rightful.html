@@ -18,16 +18,45 @@
   <main>
     <!-- CONTENT GOES BELOW HERE -->
 
-    <!-- Hero: Full viewport with sliding titles -->
-    
-    <section class="hero" style="background-image: url('./images/Rightful.png');">
-      <div class="hero__inner">
-        <h2 class="hero__title">Rightful</h2>
-        <h3 class="hero__subtitle">Branding, product, and polished interfaces</h3>
+    <!-- RIGHTFUL PARALLAX INTRO HERO-->
+    <section class="parallax-hero"
+      style="background-image:url('./media/rightful/rightful\ \(2\).png');
+            --panel: rgb(53, 182, 228, 0.3);
+            --panel-fg: #fefefe;
+            --panel-width: 50%;
+            --frame-max: 1350px;">
+      
+      <!-- Hit-area + coloured overlay (enables hover on the panel only) -->
+      <span class="panel-overlay" aria-hidden="true"></span>
+
+      <div class="parallax-inner">
+        <div class="project-teaser" style="--accent:#ffffff;">
+          <!-- Vertical label -->
+          <div class="subheading-03 homepage">PRODUCT DESIGN&nbsp;</div>
+
+          <!-- Line -->
+          <div style="width:1px; height:60px; background:#ffffff;"></div>
+
+          <!-- Space -->
+          <span class="spacer"></span>
+
+          <!-- Icon -->
+          <span class="icon" aria-hidden="true">
+            <img src="./media/rightful/logo.png" alt="tetra bin"
+                style="max-width:20%; display:block; margin:0;"> <!-- <- was margin:0 auto -->
+          </span>
+
+
+          <!-- Title -->
+          <h3><span style="color:#ffffff"><b>Rightful</b></span></h3>
+
+          <!-- Small paragraph -->
+          <p class="desc"><span style="color:#ffffff;">A humble bin motivated by the idea of play as a way of inspiring people to be aware of environmental sustainability issues.</span></p>
+
+          
+        </div>
       </div>
     </section>
-
-    <H2>RIGHTFUL</H2>
 
     <!-- CONTENT GOES ABOVE HERE -->
 
