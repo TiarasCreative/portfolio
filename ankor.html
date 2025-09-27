@@ -162,12 +162,117 @@
         <div class="section__100grid">
           <div class="section__col">
             <!-- Put ANY content here: text, media, forms, etc. -->
+            <!-- Drop-in carousel -->
+            <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Showcase" tabindex="0">
+              <div class="carousel__track" data-track>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/1.jpg" alt="Slide 1">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/2.jpg" alt="Slide 2">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/3.jpg" alt="Slide 3">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/4.jpg" alt="Slide 4">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/5.jpg" alt="Slide 5">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/6.jpg" alt="Slide 6">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/7.jpg" alt="Slide 7">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/8.jpg" alt="Slide 8">
+                </figure>
+                <figure class="carousel__slide" aria-roledescription="slide">
+                  <img src="./media/ankor/originalBranding/9.jpg" alt="Slide 9">
+                </figure>
+              </div>
 
-              <br/>
-            
-                <br/>
-                <br/>
-                <div style="width:6rem; height:3px; background:#FD7E50; margin:0;"></div>
+              <button class="carousel__btn carousel__btn--prev" data-prev aria-label="Previous slide">
+                <span>&lsaquo;</span>
+              </button>
+              <button class="carousel__btn carousel__btn--next" data-next aria-label="Next slide">
+                <span>&rsaquo;</span>
+              </button>
+
+              <div class="carousel__dots" data-dots aria-hidden="true"></div>
+            </div>
+
+            <script>
+            (() => {
+              // Initialize every carousel on the page
+              document.querySelectorAll('[data-carousel]').forEach((root) => {
+                const track  = root.querySelector('[data-track]');
+                const slides = Array.from(track.children);
+                const prev   = root.querySelector('[data-prev]');
+                const next   = root.querySelector('[data-next]');
+                const dotsEl = root.querySelector('[data-dots]');
+                let index = 0;
+
+                // Build dots
+                if (dotsEl) {
+                  slides.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'carousel__dot';
+                    dot.setAttribute('role', 'button');
+                    dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsEl.appendChild(dot);
+                  });
+                }
+
+                function update() {
+                  track.style.transform = `translateX(-${index * 100}%)`;
+                  slides.forEach((s, i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
+                  if (dotsEl) {
+                    [...dotsEl.children].forEach((d, i) => d.setAttribute('aria-current', i === index ? 'true' : 'false'));
+                  }
+                }
+
+                function goTo(i) {
+                  const len = slides.length;
+                  index = (i + len) % len;
+                  update();
+                }
+
+                prev.addEventListener('click', () => goTo(index - 1));
+                next.addEventListener('click', () => goTo(index + 1));
+
+                // Keyboard support
+                root.addEventListener('keydown', (e) => {
+                  if (e.key === 'ArrowLeft') goTo(index - 1);
+                  if (e.key === 'ArrowRight') goTo(index + 1);
+                });
+
+                // Basic swipe support
+                let startX = null;
+                track.addEventListener('pointerdown', (e) => {
+                  startX = e.clientX;
+                  track.setPointerCapture(e.pointerId);
+                });
+                track.addEventListener('pointerup', (e) => {
+                  if (startX !== null) {
+                    const dx = e.clientX - startX;
+                    if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+                  }
+                  startX = null;
+                });
+
+                // Init
+                update();
+              });
+            })();
+            </script>
+            <br/>
+            <br/>
+            <br/>
+            <div style="width:6rem; height:3px; background:#FD7E50; margin:0;"></div>
           </div>
         </div>
       </div>
@@ -309,11 +414,11 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Logos</b></h3>
-          <p>The original logo was kept with tweaks to the colours</p>
 
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Logos</b></h3>
+            <p>The original logo was kept with tweaks to the colours</p>
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/ankorlogos.png" style="max-width:100%; height:auto; display:block;">
             <br/>
@@ -331,13 +436,14 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Show Booth</b></h3>
-          <p>Show booth design for when Ankor visits the many boat shows happening around the world</p>
-
+          
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Show Booth</b></h3>
+            <p>Show booth design for when Ankor visits the many boat shows happening around the world</p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
-            <img src="./media/ankor/showbooth.png" style="max-width:100%; height:auto; display:block; border-radius: 1rem;">
+            <img src="./media/ankor/booth.jpg" style="max-width:100%; height:auto; display:block; border-radius: 1rem;">
             <br/>
             
           </div>
@@ -353,11 +459,12 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Application Colours</b></h3><br/>
-          <p>The new colours applied to the various applications that Ankor makes</p>
-
+            
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Application Colours</b></h3>
+            <p>The new colours applied to the various applications that Ankor makes</p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/app.png" style="max-width:100%; height:auto; display:block;">
             <br/>
@@ -375,11 +482,12 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>The Team Photos</b></h3><br/>
-          <p>Fun and goofy team photos to reflect the company values as disruptors in the industry.</p>
-
+            
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>The Team Photos</b></h3>
+            <p>Fun and goofy team photos to reflect the company values as disruptors in the industry.</p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/photos.png" style="max-width:100%; height:auto; display:block;">
             <br/>
@@ -397,11 +505,12 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Stylistic Shapes</b></h3><br/>
-          <p>Geometric shapes used in presentations, socials, webinars and general marketing. </p>
-
+            
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Stylistic Shapes</b></h3>
+            <p>Geometric shapes used in presentations, socials, webinars and general marketing. </p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/geometricshapes.png" style="max-width:100%; height:auto; display:block;">
             <br/>
@@ -419,11 +528,12 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Illustrations</b></h3><br/>
-          <p>Fun illustrations for pictography and placeholders</p>
-
+           
           <div class="section__col">
+             <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Illustrations</b></h3>
+            <p>Fun illustrations for pictography and placeholders</p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/graphics.png" style="max-width:100%; height:auto; display:block;">
             <br/>
@@ -441,11 +551,12 @@
       <div class="section__inner" aria-labelledby="section-title">
 
         <div class="section__100grid">
-            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
-          <h3 id="section-title"><b>Social Media</b></h3><br/>
-          <p>Samples of the social media content </p>
-
+            
           <div class="section__col">
+            <span style = "color: #FD7E50;"><h5 id="section-title">STYLE GUIDE</h5></span>
+            <h3 id="section-title"><b>Social Media</b></h3>
+            <p>Samples of the social media content </p>
+
             <!-- Put ANY content here: text, media, forms, etc. -->
             <img src="./media/ankor/socialmedia.png" style="max-width:100%; height:auto; display:block;">
             <br/>
