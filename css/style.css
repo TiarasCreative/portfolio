@@ -541,7 +541,7 @@ html, body { height: 100%; margin: 0; }
   /* compute a left gutter that aligns to the 1600px frame */
   --gutter-left: max(
     clamp(16px, 4vw, 32px),
-    calc((100vw - min(100vw, var(--frame-max, 1275px))) / 2)
+    calc((100vw - min(100vw, var(--frame-max, 1200px))) / 2)
   );
 }
 
@@ -573,7 +573,7 @@ html, body { height: 100%; margin: 0; }
 
   /* Make the content area fill the panel, but cap to frame width */
   width: 100%;
-  max-width: min(100%, var(--frame-max, 1300px));
+  max-width: min(100%, var(--frame-max, 1375px));
 
   /* Horizontal spacing:
      - base inner padding
