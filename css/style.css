@@ -1042,3 +1042,45 @@ html, body { height: 100%; margin: 0; }
   outline-offset: 2px;
 }
 
+/* ===== Float-in headline ===== */
+.hero-headline{
+  margin: 0 auto;
+  max-width: 22ch;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 5vw + 0.4rem, 3.8rem);
+  text-wrap: balance;
+  display: grid;
+  gap: .2em;
+}
+
+/* start state */
+.float-stagger .line{
+  display:block;
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: transform, opacity;
+}
+
+/* visible state (added by JS) */
+.float-stagger.is-visible .line{
+  animation: floatUp .7s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes floatUp{
+  from{ opacity:0; transform: translateY(18px); }
+  to  { opacity:1; transform: translateY(0); }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .float-stagger .line,
+  .float-stagger.is-visible .line{
+    animation: none; opacity: 1; transform: none;
+  }
+}
+
+
+

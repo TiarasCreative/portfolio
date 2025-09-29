@@ -164,3 +164,21 @@ mount.querySelectorAll("script").forEach((old) => {
   // Auto-run after DOM is ready
   document.addEventListener("DOMContentLoaded", includeAll);
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const targets = document.querySelectorAll('.float-stagger');
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        obs.unobserve(e.target); // animate once
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.02 });
+
+  targets.forEach(el => io.observe(el));
+});
+
+
+
