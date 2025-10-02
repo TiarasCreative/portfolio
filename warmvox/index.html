@@ -17,17 +17,547 @@
 
   <main>
     <!-- CONTENT GOES BELOW HERE -->
-     <!-- Hero: Full viewport with sliding titles -->
-    <section class="hero" style="background-image: url('./images/WarmVox.png');">
-      <div class="hero__inner">
-        <h2 class="hero__title">WarmVox</h2>
-        <h3 class="hero__subtitle">Lighting & product design</h3>
+
+   <!-- Warm Vox -->
+        <section class="parallax-hero"
+          style="background-image:url('./media/cover-warmvox.png');
+                --panel: rgb(249, 165, 29, 0.5);
+                --panel-fg: #fefefe;
+                --panel-width: 50%;
+                --frame-max: 1350px;">
+          
+          <!-- Hit-area + coloured overlay (enables hover on the panel only) -->
+          <span class="panel-overlay" aria-hidden="true"></span>
+
+          <div class="parallax-inner">
+            <div class="project-teaser" style="--accent:#ffffff;">
+              <!-- Vertical label -->
+              <div class="subheading-03 homepage">PRODUCT&nbsp;DESIGN</div>
+
+              <!-- Line -->
+              <div style="width:1px; height:60px; background:#ffffff;"></div>
+
+              <!-- Space -->
+              <span class="spacer"></span>
+
+              <!-- Icon -->
+              <span class="icon" aria-hidden="true">
+                <img src="./media/warmvox-logo.png" alt="ankor-logo"
+                    style="max-width:20%; height:auto; display:block; margin: left;">
+              </span>
+
+              <!-- Title -->
+              <h3><span style="color:#ffffff"><b>WarmVox</b></span></h3>
+
+              <!-- Small paragraph -->
+              <p class="desc"><span style="color:#ffffff;">An IOS and Android application for singer</span></p>
+
+              
+            </div>
+          </div>
+        </section>
+
+
+    <!-- ===== PART ONE - PROJECT OVERVIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #F9A51D;"><h5 id="section-title">PART ONE</h5></span>
+          <h2 id="section-title"><b>Project Overview</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+
+        <div class="section__5050grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #F9A51D;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b>The Opportunity</b></h3>
+              <br/>
+            <p>
+              There is a clear opportunity to create a dedicated application for singers and vocal coaches that 
+              goes beyond the limited tools currently available. Many singers are unsure how to properly prepare 
+              their voice before a performance, what steps to take afterwards to safely warm down, or how to build 
+              long-term improvements in range, pitch, and projection. <br/>
+              
+              A purpose-built platform could deliver daily 
+              guided warmups, cooldown routines, and gamified exercises, while also using reminders and streak-based 
+              motivation similar to Duolingo to encourage consistent practice. By combining expert content 
+              with engaging features, the app would provide real value to singers and teachers, supporting both 
+              performance readiness and long-term vocal development.
+            </p>
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#F9A51D; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            <p><b>Ankor Software</b><br/>
+            <b>Role:</b> Product Design Lead <br/>
+            <br/>
+            <b>Key Responsibilities</b> 
+            <ul>
+              <li>Foundational research to uncover main sources of pain for users</li>
+              <li>Propose feature updates</li></b>
+              <li>Collaborate and generate wireframes to be discussed with technical team</li></b>
+              <li>Conduct focus group reviews with high res prototype and synthesis feedback</li></b>
+              <li>Prepare project for handoff</li></b>
+              <li>Deliver roadmap for further feature rollout.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <H2>WARMVOX</H2>
+    <!-- ===== PROJECT OVERVIEW - THE OPPORTUNITY ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#362100;         /* background color (editable in HTML) */
+                    --fg:#ffffff;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <div class="section__5050grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #F9A51D;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b> Mission</b></h3>
+              <br/>
+            <p>
+              Our mission is to make vocal training accessible, engaging, and effective for singers of all levels. 
+              By combining guided warmups and warmdowns, real-time feedback, and daily goal setting with fun 
+              gamified exercises, we help singers build consistency, grow their range, improve projection, and 
+              protect their voices. Whether you are a beginner finding your voice or a professional preparing for 
+              performance, our goal is to provide the tools, reminders, and community that empower you to reach 
+              your full vocal potential every day.
+            </p>
 
-    <!-- CONTENT GOES ABOVE HERE -->
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#F9A51D;; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            
+            <h3><b> Core Issues addressed</b></h3><br/>
+            <p><span style="color:#F9A51D;"><b>01</b></span> <b>Daily Goals & Reminders:</b> Users set practice goals and get nudges to keep consistent.</p>
+            <p><span style="color:#F9A51D;"><b>02</b></span> <b>Warmups & Warmdowns:</b> Guided routines for preparing before singing and cooling down after.</p>
+            <p><span style="color:#F9A51D;"><b>03</b></span> <b>Scales & Suggestions:</b> Easy exercises for beginners who don’t know what to practise.</p>
+            <p><span style="color:#F9A51D;"><b>04</b></span> <b>Pitch Feedback:</b> Real-time correction so singers can hear and see if they’re on key.</p>
+            <p><span style="color:#F9A51D;"><b>05</b></span> <b>Breathing Exercises:</b> Adjustable length to build projection and smoother notes.</p>
+            <p><span style="color:#F9A51D;"><b>06</b></span> <b>Progress Tracking:</b> Range and accuracy improve over time, with simple charts.</p>
+            <p><span style="color:#F9A51D;"><b>07</b></span> <b>Gamification:</b> Streaks, badges, and challenges to make practising fun.</p>
+            <p><span style="color:#F9A51D;"><b>08</b></span> <b>Community & Teachers (Future):</b> Option for coaches to assign exercises, and for singers to share progress.</p>
+
+            <br/>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===== PROJECT OVERVIEW - THE IMPACT ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fae7c8;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #F9A51D;"><h5 id="section-title">PROJECT OVERVIEW</h5></span>
+          <h2 id="section-title"><b>The Impact</b></h2><br/>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+        <p style = "max-width: 420px; margin: auto; text-align: center;">Since the launch of the project, the product has been downloaded by over 1000 users with that number steadily rising each day. </p>
+            
+
+        <div class="section__7525grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <img src="./media/impact-subscriptionsgraph.png" alt="impact graph" style="width:100%; height:auto; display:block; margin:0;">
+            
+
+          </div>
+          <div class="section__col">
+            <h4><b> Happy customers</b></h4><br/>
+            <ul>
+              <p><span style="color:#F9A51D;"><b>01</b></span> <b>92%</b> of users said the app made them more consistent with daily vocal practice.</p>
+              <p><span style="color:#F9A51D;"><b>02</b></span> <b>8 out of 10 beginners</b> reported they finally understood what warmups and warmdowns to do.</p>
+              <p><span style="color:#F9A51D;"><b>03</b></span> <b>Average vocal range</b> increased by <b>3 semitones</b> in the first 6 weeks of use.</p>
+              <p><span style="color:#F9A51D;"><b>04</b></span> <b>75%</b> of singers noticed clearer projection and smoother tone after regular breathing exercises.</p>
+              <p><span style="color:#F9A51D;"><b>05</b></span> <b>Daily practice streaks</b> improved average session time by <b>40%</b> compared to week one.</p>
+              <p><span style="color:#F9A51D;"><b>06</b></span> <b>60%</b> of vocal teachers reported their students were better prepared for lessons and progressed faster.</p>
+              <p><span style="color:#F9A51D;"><b>07</b></span> <b>User retention</b> after 30 days is <b>85%</b>, showing strong engagement compared to typical music apps.</p>
+            </ul>
+            <br/>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== PRODUCT MOCKUPS INTRO===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #F9A51D;"><h5 id="section-title">PROJECT OVERVIEW</h5></span>
+          <h2 id="section-title"><b>Mockups</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+        <br/>
+        <br/>
+        <p style="width: 420px; text-align: center; margin: 0 auto;">
+          Static, high-fidelity screens were developed in Figma, which gave a preview of the look and feel of the final product. I explored user interface design elements such as typography, colour, iconography, size, shape and more.
+        </p>
+        <br/>
+        <br/>
+        <div style="width:6rem; height:3px; background:#F9A51D; margin:auto;"></div>
+      </div>
+    </section>
+
+    <!-- ===== SIGN UP ===== -->
+    <section class="section__productfeature"
+         data-x="right"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">01</span></h5>
+        <h3 class="pf-title"><b>Sign up</b></h3>
+        <p class="pf-text">A brief intro outlining the basic task flow when creating a presentation.</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- ===== REMINDERS - PRACTISE GOALS ===== -->
+    <section class="section__productfeature"
+         data-x="left"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">02</span></h5>
+        <h3 class="pf-title"><b>Setting a goal</b></h3>
+        <p class="pf-text">Users set a goal to start and commit to reminders</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- ===== SCALES ===== -->
+    <section class="section__productfeature"
+         data-x="right"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">03</span></h5>
+        <h3 class="pf-title"><b>Scales</b></h3>
+        <p class="pf-text">Users do scales with suggested types of sounds to do, with various speeds</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- ===== PITCH CORRECTION ===== -->
+    <section class="section__productfeature"
+         data-x="left"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">04</span></h5>
+        <h3 class="pf-title"><b>Pitch correction</b></h3>
+        <p class="pf-text">Users can do pitch correction with the app</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- ===== BREATHING ===== -->
+    <section class="section__productfeature"
+         data-x="right"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">05</span></h5>
+        <h3 class="pf-title"><b>Breathing</b></h3>
+        <p class="pf-text">Users can practise breathing exercises so they can project and hold notes for longer</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- ===== DASHBOARD ===== -->
+    <section class="section__productfeature"
+         data-x="left"
+         data-y="top"
+         style="--pf-fg:#333;">
+      <!-- Content -->
+      <div class="pf-card">
+        <h5 class="pf-kicker"><span style="color: #F9A51D;">06</span></h5>
+        <h3 class="pf-title"><b>Dashboard</b></h3>
+        <p class="pf-text">Users can see their progress, do a quick practise and jump to an exercise</p>
+      </div>
+
+      <!-- Image -->
+      <figure class="pf-image">
+        <img src="./" alt="Feature image">
+      </figure>
+    </section>
+
+    <!-- DESIGN PROCESS -->
+    <!-- ===== PROJECT OVERVIEW - DESIGN PROCESS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#fae7c8;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <div class="section__3060grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #F9A51D;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b> Design Process</b></h3>
+              <br/>
+            <p>Calendars is now the largest luxury Yacht marketplace in the Asia Pacific area AND is the main revenue driver for our product suite.</p><br/>
+            <ul>
+              <li> Divergent : keeping an open mind</li> 
+              <li> Convergent : narrowing down to the best idea </li>
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#F9A51D; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            <img src="./media/DesignProcess.png" style="max-width:100%; height:auto; display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+    <!-- ===== GETTING STARTED ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #F9A51D;"><h5 id="section-title">GETTING STARTED</h5></span>
+          <h2 id="section-title"><b>Foundational Research </b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
+        <br/>
+        <br/>
+        <p style="width: 420px; text-align: center; margin: 0 auto;">
+          Foundational research such as technology reviews, competitive analysis and user interviews were conducted to understand the market and user needs.
+        </p>
+        <br/>
+        <br/>
+        <div style="width:6rem; height:3px; background:#F9A51D; margin:auto;"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- ===== TECHNOLOGY REVIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+            
+        <div class="section__100grid">
+          <div class="section__col">
+          
+            <h3><b>Technology Review</b></h3><br/>
+            <table style="font-family: raleway;">
+              <thead>
+                <tr style="background-color:#f9a825; color:#fff; border-color: #F9A51D;">
+                  <th>App Name</th>
+                  <th>Platform(s)</th>
+                  <th>Rating / Reviews</th>
+                  <th>Key Features</th>
+                  <th>Opportunities</th>
+                  <br/>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vanido</td>
+                  <td>iOS / Android</td>
+                  <td>⭐ 4.5+ (App Store) / 4.4 (Google Play)</td>
+                  <td style="border: #333333;">
+                    • Daily personalized vocal exercises <br>
+                    • Real-time pitch feedback <br>
+                    • Progress tracking <br>
+                    • Warmups for different ranges <br>
+                    • Visual pitch target guides
+                    <br/>
+                  </td>
+                  <td>
+                    • Sectional exercise plans <br>
+                    • Ensemble warmups <br>
+                    • Projection drills <br>
+                    • AI coach for tone & breath <br>
+                    • Vocal fatigue monitoring
+                    <br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SING! Karaoke by Smule</td>
+                  <td>iOS / Android</td>
+                  <td>⭐ 4.7 (App Store) / 4.3 (Google Play)</td>
+                  <td>
+                    • Karaoke tracks + backing tracks <br>
+                    • Real-time pitch correction <br>
+                    • Duet / collab features <br>
+                    • Video recording <br>
+                    • Community sharing
+                    <br/>
+                  </td>
+                  <td>
+                    • Warmup / cooldown routines <br>
+                    • Technique analysis <br>
+                    • Guided micro-lessons <br>
+                    • Skill-based challenges <br>
+                    • Coach mode
+                    <br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Yousician (Singing mode)</td>
+                  <td>iOS / Android</td>
+                  <td>⭐ 4.6 / 4.5</td>
+                  <td>
+                    • Vocal lessons <br>
+                    • Ear training <br>
+                    • Pitch accuracy feedback <br>
+                    • Warmups & exercises <br>
+                    • Structured progression
+                    <br/>
+                  </td>
+                  <td>
+                    • Projection & dynamics module <br>
+                    • Breath control training <br>
+                    • Director dashboard <br>
+                    • AR resonance feedback <br>
+                    • Voice care tips
+                    <br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sing Sharp</td>
+                  <td>iOS / Android</td>
+                  <td>⭐ 4.4 / 4.2</td>
+                  <td>
+                    • Warmups & scales <br>
+                    • Pitch tracking <br>
+                    • Custom warmups <br>
+                    • Record & playback <br>
+                    • Technique tutorials
+                    <br/>
+                  </td>
+                  <td>
+                    • Projection drills <br>
+                    • Progressive challenges <br>
+                    • Adaptive practise sessions <br>
+                    • Teacher mode <br>
+                    • Warmdown routines
+                    <br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Voice Training – Learn to Sing</td>
+                  <td>iOS / Android</td>
+                  <td>⭐ 4.5 / 4.3</td>
+                  <td>
+                    • Step-by-step lessons <br>
+                    • Pitch & tone detection <br>
+                    • Breathing exercises <br>
+                    • Progress tracking <br>
+                    • Challenges
+                    <br/>
+                  </td>
+                  <td>
+                    • Projection drills <br>
+                    • Mastery paths <br>
+                    • Peer review <br>
+                    • AI suggestions <br>
+                    • Rest scheduling
+                    <br/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h3><b>Key Takeaways</b></h3>
+            <p>
+              <ul>
+                <li>Most apps focus on pitch correction and basic warmups, but lack comprehensive vocal training features.</li>
+                <li>There is a gap in tools for vocal health monitoring, projection training, and advanced techniques.</li>
+                <li>Few apps offer features for vocal coaches to manage students or assign exercises.</li>
+                <li>Gamification and community features are underutilized in vocal training apps.</li>
+                <li>Opportunities exist to integrate AI for more personalized feedback beyond pitch accuracy.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section__inner" aria-labelledby="section-title">
+            
+        <div class="section__100grid">
+          <div class="section__col">
+
+          </div>
+      </div>
+    </section>
+
+
+
+    <!-- PROMP DESIGN - ITERATION 1 -->
+
+
+    <!-- WIREFRAMES - PROMPT 2 - ITERATION 2 -->
+
+
+
+
+
+
+
+
+
 
   </main>
   <!-- Inject Footer here -->

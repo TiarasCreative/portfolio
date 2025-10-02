@@ -1,4 +1,4 @@
-<head>
+head>
   <meta charset="UTF-8">
   <title>Tiara's Portfolio</title>
   <meta name="description" content="Tiara is a world renouned designer. Let her do your branding, marketing and logos">
@@ -17,19 +17,91 @@
 
   <main>
     <!-- CONTENT GOES BELOW HERE -->
-    
-    <!-- Hero: Full viewport with sliding titles -->
-    <section class="hero" style="background-image: url('./images/AnnasCurtains.png');">
-      <div class="hero__inner">
-        <h2 class="hero__title">Anna's Curtains</h2>
-        <h3 class="hero__subtitle">Website and Branding design for a custom curtain company</h3>
+
+    <!-- RIGHTFUL PARALLAX INTRO HERO-->
+    <section class="parallax-hero"
+      style="background-image:url('./media/rightful\ \(2\).png');
+            --panel: hsla(196, 76%, 55%, 0.302);
+            --panel-fg: #fefefe;
+            --panel-width: 50%;
+            --frame-max: 1350px;">
+      
+      <!-- Hit-area + coloured overlay (enables hover on the panel only) -->
+      <span class="panel-overlay" aria-hidden="true"></span>
+
+      <div class="parallax-inner">
+        <div class="project-teaser" style="--accent:#ffffff;">
+          <!-- Vertical label -->
+          <div class="subheading-03 homepage">PRODUCT DESIGN&nbsp;</div>
+
+          <!-- Line -->
+          <div style="width:1px; height:60px; background:#ffffff;"></div>
+
+          <!-- Space -->
+          <span class="spacer"></span>
+
+          <!-- Icon -->
+          <span class="icon" aria-hidden="true">
+            <img src="./media/logo.png" alt="tetra bin"
+                style="max-width:20%; display:block; margin:0;"> <!-- <- was margin:0 auto -->
+          </span>
+
+
+          <!-- Title -->
+          <h3><span style="color:#ffffff"><b>Rightful</b></span></h3>
+
+          <!-- Small paragraph -->
+          <p class="desc"><span style="color:#ffffff;">From scratch marketplace and collaboration platform for legal professionals looking to work remotely and save the amazon at the same time.</span></p>
+        </div>
       </div>
     </section>
-    
 
-    <H2>ANNASCURTAINS</H2>
+    <!-- ===== PART ONE - PROJECT OVERVIEW ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        <header class="section__header">
+          <span style = "color: #62b4fc;"><h5 id="section-title">PART ONE</h5></span>
+          <h2 id="section-title"><b>Project Overview</b></h2>
+          <!-- optional subheading -->
+          <!-- <p class="section__sub">A short subtitle can go here.</p> -->
+        </header>
 
-    <!-- CONTENT GOES ABOVE HERE -->
+        <div class="section__5050grid">
+          <div class="section__col">
+            <!-- Put ANY content here: text, media, forms, etc. -->
+            <span style = "color: #62b4fc;"><h5 id="section-title">PROJECT OVERVIEW</h5></span><br/>
+            <h3><b>The Opportunity</b></h3>
+              <br/>
+            <p> 
+              Lawyers in the industry were having trouble finding work, especially with Covid. Vise versa the people were crying out for 
+              quality legal people but didnt know where to look. Rightful is a up and coming start up in Sydney and were looking to build their first breakout product to the market.
+            </p>
+                <br/>
+                <br/>
+                <div style="width:6rem; height:3px; background:#62b4fc; margin:0;"></div>
+          </div>
+          <div class="section__col">
+            <p><b>Company: </b>Rightful<br/>
+            <b>Role:</b> Lead Product Designer<br/>
+            <b>Key Responsibilities</b> 
+            <ul>
+              <li>Discovery and foundational research</li>
+              <li>Key persona creation</li></b>
+              <li>Brand story writing</li></b>
+              <li>Concept development</li></b>
+              <li>Concept refinment and community testing</li></b>
+              <li>Final design and prototyping</li>
+              <li>User validation</li>
+              <li>Refinement & product roadmap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
   <!-- Inject Footer here -->
