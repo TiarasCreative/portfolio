@@ -368,18 +368,15 @@
       <div class="section__inner" aria-labelledby="section-title">
         
         <br/>
-        <div class="section__7525grid">
+        <div class="section__100grid">
           
-          <div class="section__col">
-            <img src="./media/CompetitorAnalysis- layers.png" style="width:100%; height:auto; display:block;">
-            
-          </div>
+          
           <div class="section__col">
             <!-- Put ANY content here: text, media, forms, etc. -->
             <span style = "color: #0f6f7b;"><h5 id="section-title">DISCOVERY</h5></span><br/>
             <h3><b>Competitor Analysis</b></h3>
               <br/>
-            <p>I evaluated industry Standards and best practices for design systems technology. </p>
+            <p style="max-width: 420px;">I evaluated industry Standards and best practices for design systems technology. </p>
               <p><b>Key Insights</b></p>
               <ul>
                 <li>Storybook dominates</li>
@@ -391,6 +388,11 @@
             </p>
                 <br/>
                 <div style="width:6rem; height:3px; background:#0f6f7b; margin:0;"></div>
+          </div>
+
+          <div class="section__col">
+            <img src="./media/CompetitorAnalysis- layers.png" style="width:100%; height:auto; display:block;">
+            
           </div>
 
         </div>
@@ -677,32 +679,170 @@
         <p style="max-width: 420; margin: auto; text-align: center;">The following section outlines a few highlights from the develop stage of the project. </p>
 
         <br/>
-        <div class="section__2575grid">
+        <div class="section__303030grid">
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <h4><b> Global Parameters</b></h4>
+            <p>
+              <ul>
+              
+              <li>Breakpoints</li>
+              <li>Sizes </li>
+              
+            </ul></p>
+
+          </div>
           <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
             <!-- Quadrant 1 -->
-            <img src="./media/icon-chat-alt-2-outline.svg" style="width:20%; height:auto; display:block;"><br/>
-            <h4><b> Atoms Tokens </b></h4>
-            <p><ul>
-              <li>Design language - Must be defined</li>
-              <li>Design Kits - TailWind & flowbite</li>
-              <li>Component Library - Figma Based with token variable organisation</li>
-              <li>Dev sandbox - StoryBook</li>
-              <li>Docs & guidelines - Need to be confirmed</li>
-              <li>Feedback loops - Through Asana Ticketting </li>
-              <li>Feedback loops - Through Asana Ticketting </li>
+            <h4><b> Tokens</b></h4>
+            <p>
+              <ul>
+              <li>Colours</li>
+              <li>Fonts, sizes, weights, brezkpoints</li>
+              <li>Spacing & Radii</li>
+              <li>Elevation & Shadows</li>
+              <li>States</li>
+              <li>Density - Line heights, padding </li>
             </ul></p>
+
+            
           </div>
 
           <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
             <!-- Quadrant 2 -->
-            <img src="./media/icon-chat-alt-2-outline.svg" style="width:20%; height:auto; display:block;"><br/>
-            <h4><b>Tasks </b></h4>
+            <h4><b> Priority items - Components</b></h4>
             <p><ul>
-              <li>Feedback happens in project files only, never at the system level.</li>
-              <li>No formal contribution process.</li>
-              <li>No approval or stewardship of changes — anyone can add to the system.</li>
-              <li>Cleanup happens maybe once a year.</li>
+              <li>Buttons (variants + sizes + loading + icons)</li>
+              <li>Input + Label + Helper/Error + Validation patterns</li>
+              <li>Select / Combobox (accessible)</li>
+              <li>Checkbox / Radio / Switch</li>
+              <li>Tooltip / Popover</li>
+              <li>Modal / Drawer </li>
+              <li>Table (with bulk actions, pagination, empty/error/loading states)</li>
+              <li>Avatar + User chip (consistent sizes)</li>
+              <li>Badge / Tag</li>
+              <li>Alert / Toast</li>
             </ul></p>
+          </div>
+
+        </div>
+        
+
+        <div class="section__100grid">
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <h3><b>Breakpoints</b></h3>
+            <p style="max-width: 420;">Breakpoints in the design system were determined using the Tailwind and Flowbite guide </p>
+            <img src="./media/Breakpoints.png" style="width:100%; height:auto; display:block;"><br/>
+          </div>
+      </div>
+
+      <div class="section__100grid">
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <h3><b>Sizes</b></h3>
+            <p style="max-width: 420;">Tshirt sizes used to apply to tokens for quick parameter changes based on specific breakpoints or contexts </p>
+            <img src="./media/TshirtSizes.svg" style="max-width:50%; height:auto; display:block;"><br/>
+          </div>
+      </div>
+    </section>
+
+
+    
+    <!-- ===== COLOUR TOKENS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        
+        <br/>
+        <div class="section__2575grid">
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <span style = "color: #0694A2;"><h5 id="section-title">DEVELOP</h5></span><br/>
+            <h3><b>Colour Tokens</b></h3>
+            <p>I developed a framework for managing and maintaining our colour token library within Figma which could be exported to JSON</p>
+            <p><b>It handles</b>
+            <ul>
+              <li>Colour Primitives: Hexs values translated to token named colours</li>
+              <li>Colour references: Colour name groupings using token named colours</li>
+              <li>Light & dark mode</li>
+              
+            </ul></p>
+            <br/>
+            <div style="width:6rem; height:3px; background:#0f6f7b; margin:0;"></div>
+          </div>
+
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <img src="./media/Colour-variables.png" style="width:100%; height:auto; display:block;"><br/>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COLOUR GUIDELINES ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ffffff;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        
+        <br/>
+        <div class="section__7525grid">
+          
+
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <img src="./media/Light-DarkMode-guidelines.png" style="width:100%; height:auto; display:block;"><br/>
+            <p><i>Switch between light and dark mode using the layer panel</i></p>
+            <br/>
+            <img src="./media/Image (5).png" style="width:100%; height:auto; display:block;"><br/>
+            <p><i>Colour along with an icon, thicker border, and background are used to indicate an error.</i></p>
+            <br/>
+            <img src="./media/WCAG-contrast-ratios.png" style="width:100%; height:auto; display:block;"><br/>
+            <p><i>Tested colour variables to comply with WCAG 2.1 level AA. </i></p>
+          </div>
+
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <span style = "color: #0694A2;"><h5 id="section-title">DEVELOP</h5></span><br/>
+            <h3><b>Guidelines for Colour Use</b></h3>
+            <p>Instructions for using the colour tokens are outline within the figma file</p>
+            <p><b>Key Highlights</b>
+            <ul>
+              <li>Using colour purposefully/ sparingly</li>
+              <li>Hierarchy: Foreground vs background</li>
+              <li>Light Vs Dark Mode</li>
+              <li>Accessibility & Contrast</li>
+              <li>Don’t rely on colour alone to convey meaning</li>
+              
+            </ul></p>
+            <br/>
+            <div style="width:6rem; height:3px; background:#0f6f7b; margin:0;"></div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOKENS - TYPOGRAPHY/FONTS ===== -->
+    <section class="fullbleed-section"
+            style="--bg:#ebfffc;         /* background color (editable in HTML) */
+                    --fg:#333333;         /* optional text color */
+                    --gap:2.5rem;           /* gap between columns */
+                    --pad-block:clamp(40px,6vw,96px);">
+      <div class="section__inner" aria-labelledby="section-title">
+        
+        <br/>
+        <div class="section__2575grid">
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <span style = "color: #0694A2;"><h5 id="section-title">DEVELOP</h5></span><br/>
+            <h3><b>Typography</b></h3>
+            <p>Working with HTML's 6 typography sizes, I designed a scale that accounted for different breakpoints within the product</p>
+            <br/>
+            <div style="width:6rem; height:3px; background:#0f6f7b; margin:0;"></div>
+          </div>
+
+          <div class="section__col" style = "border-radius: 1rem; padding: 1rem;">
+            <img src="./media/typ-variables.png" style="width:100%; height:auto; display:block;"><br/>
           </div>
           
         </div>
