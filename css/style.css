@@ -964,8 +964,9 @@ html, body { height: 100%; margin: 0; }
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;       /* 1920×1080 style */
+  max-width: 1200px;   /* ✅ cap the size */
+  aspect-ratio: 16 / 9;
+  margin-inline: auto; /* ✅ keeps it centered within the parent */
   overflow: hidden;
   background: #000;
   border-radius: var(--radius);
