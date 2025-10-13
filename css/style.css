@@ -528,6 +528,7 @@ html, body { height: 100%; margin: 0; }
   align-items: center;                                  /* vertical centering when there’s room */
   text-align: left;
   position: relative;
+  
 
   /* never clip top/bottom; give breathing room */
   overflow: visible;
@@ -593,6 +594,7 @@ html, body { height: 100%; margin: 0; }
   /* Keep everything wrapping within the panel area */
   overflow-wrap: anywhere;
   word-break: normal;
+  max-width: 550px;
 }
 
 /* Ensure child text never overflows the panel column */
