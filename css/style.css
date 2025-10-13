@@ -935,29 +935,32 @@ html, body { height: 100%; margin: 0; }
     }
 
 
-.card{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-  border:1px solid #e5e5e5;
-  border-radius:1rem;
-  padding:12px;
-  transition:transform .15s ease, box-shadow .15s ease;
-  box-shadow: #000 0 1px 6px rgba(0,0,0,.12);
+.card {
+  display: flex;                /* make the card a flex container */
+  flex-direction: column;       /* stack image + content vertically */
+  height: 100%;                 /* let it stretch to fill the parent */
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e5e5;
+  border-radius: 1rem;
+  padding: 12px;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 1px 6px rgba(0,0,0,.12);
 }
-.card:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.12); }
-.card img{ border-radius:1rem; }
 
-
-:root{
-  --arrow-size: 34px;
-  --arrow-pad: 8px;
-  --arrow-bg: rgba(0,0,0,.45);
-  --arrow-bg-hover: rgba(0,0,0,.65);
-  --arrow-fg: #fff;
-  --dot-size: 8px;
-  --radius: 8px;
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
+
+.card img {
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  flex: 1;                      /* ✅ let image grow to fill available space */
+  object-fit: cover;            /* ✅ fill without stretching image */
+}
+
 
 /* ===== Carousel styles ===== */
 /* Outer frame: scales to container width, keeps 16:9 */
