@@ -594,7 +594,6 @@ html, body { height: 100%; margin: 0; }
   /* Keep everything wrapping within the panel area */
   overflow-wrap: anywhere;
   word-break: normal;
-  max-width: 550px;
 }
 
 /* Ensure child text never overflows the panel column */
