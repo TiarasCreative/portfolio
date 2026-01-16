@@ -623,7 +623,8 @@ html, body { height: 100%; margin: 0; }
 @media (max-width: 900px){
   .parallax-hero{
     background-attachment: scroll;
-    
+    grid-template-columns: 1fr;          /* single column */
+    --gutter-left: clamp(16px, 4vw, 32px);/* simple safe gutter on mobile */
   }
 
   /* Make overlay solid across the whole section on mobile */
